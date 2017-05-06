@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0060)http://public.whut.edu.cn/wenfa/news/shownews.asp?newsid=114 -->
+<!--  文法学院新闻系统 代码由 杨吉明  email: aboutdust@yahoo.com.cn--><HTML><HEAD><TITLE>校园歌手资格公示</TITLE>
+<SCRIPT src="校园歌手资格公示.files/scroll.js"></SCRIPT>
+<LINK href="校园歌手资格公示.files/style.css" rel=stylesheet type=text/css>
+<STYLE>.content {
+	BACKGROUND-COLOR: #eefff3; BORDER-BOTTOM: #006699 1px dotted; BORDER-LEFT: #006699 1px dotted; BORDER-RIGHT: #006699 1px dotted; BORDER-TOP: #006699 1px dotted; FONT-SIZE: 12pt; LINE-HEIGHT: 1.5em; PADDING-BOTTOM: 20px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; PADDING-TOP: 20px
+}
+.input {
+	BORDER-BOTTOM: #5aaeff 1px solid; BORDER-LEFT: #5aaeff 1px solid; BORDER-RIGHT: #5aaeff 1px solid; BORDER-TOP: #5aaeff 1px solid; COLOR: #000000; FONT: 11pt "Verdana", "Arial", "宋体"; HEIGHT: 16pt
+}
+A:link {
+	COLOR: blue
+}
+A:visited {
+	COLOR: gray
+}
+</STYLE>
+
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META content="MSHTML 5.00.2614.3500" name=GENERATOR></HEAD>
+<BODY leftMargin=20 text=#000000 topMargin=10>
+<TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="98%">
+  <TBODY>
+  <TR><!--td height="10" bgcolor="#FFE6BF"><div align="right">双击鼠标自动滚屏</div></td--></TR></TBODY></TABLE>
+<TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="98%">
+  <TBODY>
+  <TR>
+    <TD height=30 vAlign=center>
+      <DIV align=center><BR>
+      <TABLE border=0 cellPadding=0 cellSpacing=0 width="80%">
+        <TBODY>
+        <TR>
+          <TD align=middle background=校园歌手资格公示.files/bg3.jpg height=30 
+          style="LINE-HEIGHT: 30px"><FONT size=3><B>校园歌手资格公示</B></FONT></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD></TR></TBODY></TABLE><FONT size=5></FONT><BR></DIV></TD></TR>
+  <TR>
+    <TD>
+      <TABLE border=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD><A href="http://public.whut.edu.cn/wenfa">返回首页</A></TD>
+          <TD align=middle>
+            <DIV align=center>2003-10-15 
+            16:12:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文章来源:武汉理工大学文法学院&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            作者:文法学院学工办&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浏览次数:23</DIV></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD vAlign=top>
+      <TABLE width="100%">
+        <TBODY>
+        <TR>
+          <TD class=content><IMG align=left border=0 
+            src="校园歌手资格公示.files/showimg.jpg"> 
+            <SPAN>靳晶&nbsp;&nbsp;女，文法学院法学0301班学生 
+</SPAN></TD></TR></TBODY></TABLE></TD></TR>
+  <TR height=50>
+    <TD vAlign=bottom>
+      <DIV align=right></DIV></TD></TR>
+  <TR>
+    <TD vAlign=top>
+      <TABLE width="98%">
+        <TBODY>
+        <TR>
+          <TD><SPAN><B>&nbsp;&nbsp;&nbsp;&nbsp;相 关 新 闻 </B></SPAN></TD>
+          <TD align=right><A 
+            href="http://public.whut.edu.cn/wenfa/wfbbs"><FONT 
+            color=#ff6600>去<FONT 
+            color=#006500><B>文法论坛</B></FONT>看看</FONT></A>&nbsp;&nbsp;&nbsp;【<A 
+            href="http://public.whut.edu.cn/wenfa/news/shownews.asp?newsid=114#" 
+            onclick="javascript: window.close()">关闭窗口</A>】</TD></TR>
+        <TR>
+          <TD><SPAN>暂时没有相关新闻 </SPAN>
+            <UL></UL></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<CENTER>*************************************************************************************</CENTER>
+<TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="98%">
+  <TBODY>
+  <TR>
+    <TD>
+      <SCRIPT language=javascript>
+function DelAbate(id)
+{
+    if ( confirm("注意:该项操作将会遍历所有文章和所有评论,请尽量在服务器不繁忙时使用!!是否继续？"))
+        {
+            window.location.href = "admin/reviewmanage.asp?action=delabate&newsid=" + id
+        }
+}
+function DelAll(id)
+{
+    if ( confirm("警告!执行该操作将会删除全部文章的所有评论!!!是否继续？"))
+        {
+            window.location.href = "admin/reviewmanage.asp?action=delall&newsid=" + id
+        }
+}
+function DelOne(rid,id)
+{
+    if ( confirm("是否删除本条评论？"))
+        {
+            window.location.href = "admin/reviewmanage.asp?action=delone&newsid=" + id + "&reviewid=" + rid
+        }
+}
+function DelAbout(id)
+{
+    if ( confirm("警告!执行该操作将会删除与本文章相关的评论!!!是否继续？"))
+        {
+            window.location.href = "admin/reviewmanage.asp?action=delabout&newsid=" + id
+        }
+}
+</SCRIPT>
+      &nbsp;&nbsp;&nbsp;&nbsp;<B>本新闻的一些评论&nbsp;&nbsp;&nbsp;&nbsp;</B><BR>该新闻目前没有评论
+      <HR SIZE=0 width="40%">
+      <BR>
+      <FORM action=addreview.asp method=post>
+      <TABLE align=center border=0 cellPadding=0 cellSpacing=0 width=550>
+        <TBODY>
+        <TR>
+          <TD colSpan=2>
+            <DIV align=center>
+            <P>&nbsp;</P>
+            <P><FONT size=3><B>发表评论</B></FONT>(带<FONT 
+            color=red>*</FONT>号的为必填项)</P></DIV></TD></TR>
+        <TR>
+          <TD width=71><FONT color=red>*</FONT>您的网名:</TD>
+          <TD width=417><INPUT class=input maxLength=29 name=reviewer size=55> 
+          </TD></TR>
+        <TR>
+          <TD width=71>&nbsp;您的主页:</TD>
+          <TD width=417><INPUT class=input maxLength=98 name=url size=55 
+            value=http://> </TD></TR>
+        <TR>
+          <TD width=71><FONT color=red>*</FONT>您的信箱:</TD>
+          <TD width=417><INPUT class=input maxLength=58 name=email size=55> 
+        </TD></TR>
+        <TR>
+          <TD width=71><FONT color=red>*</FONT>评论内容:</TD>
+          <TD width=417><TEXTAREA class=select cols=63 name=content rows=5></TEXTAREA> 
+          </TD></TR></TBODY></TABLE><INPUT name=newsid type=hidden value=114> 
+      <P 
+      align=center><INPUT class=button type=submit value="  发  表  "></P></FORM></TD></TR></TBODY></TABLE>
+<DIV align=center><SPAN style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt"><FONT 
+face=Arial><SPAN class=p9>
+<HR width="95%" height="16">
+<BR></SPAN><SPAN style="FONT-FAMILY: 宋体; FONT-SIZE: 9pt"><SPAN class=p9><FONT 
+color=#800000><A href="http://www.whut.edu.cn/"><FONT 
+color=blue>武汉理工大学</FONT></A><A href="http://public.whut.edu.cn/wenfa"><FONT 
+color=red>文法学院</FONT></A></FONT><BR><FONT face=Arial><A 
+href="mailto:aboutdust@yahoo.com.cn">mailto:aboutdust@yahoo.com.cn</A></FONT></SPAN><BR></SPAN></FONT><SPAN 
+class=p9><FONT face=Arial></FONT></SPAN></SPAN></DIV></BODY></HTML>

@@ -1,0 +1,131 @@
+/* CSS Document */
+/* Í¼Æ¬¹ö¶¯ */
+#dong
+{
+    height:200px;
+}
+.img_roll{
+height:160px;
+float:left;
+}
+.container {
+	width: 276px;
+    height:200px;
+	padding: 0;
+	margin: 0 auto;
+}
+.folio_block {
+width: 276px;
+ height:200px;
+}
+
+
+/*--Main Container--*/
+.main_view {
+	float: left;
+	position: relative;
+}
+/*--Window/Masking Styles--*/
+.window {
+	height:200px;	width: 276px;
+	overflow: hidden; /*--Hides anything outside of the set width/height--*/
+	position: relative;
+}
+.image_reel {
+	position: absolute;
+	top: 0; left: 0;
+}
+.image_reel img {float: left;}
+
+/*--Paging Styles--*/
+.paging {
+	position: absolute;
+	bottom: 0px; right: 66px;
+	width: 144px; height:27px;
+	z-index: 100; /*--Assures the paging stays on the top layer--*/
+	text-align: center;
+	line-height: 40px;
+	display: none; /*--Hidden by default, will be later shown with jQuery--*/
+}
+/*.paging a 
+{
+    width:14px;
+    height:14px;
+    line-height:14px;
+    display:block;
+	text-decoration: none;
+	color: #fff;
+	float:left;
+	text-indent:-9999px;
+	background:#fff;
+	border-radius:7px;
+	-webkit-border-radius:7px;
+	-moz-border-radius:7px;
+	-ms-border-radius:7px;
+	margin-right:6px;
+	opacity:.5;
+	-webkit-opacity:.5;
+	-moz-opacity:.5;
+	-ms-opacity:.5;
+	filter:alpha(opacity=50);
+}
+.paging a.active {
+	font-weight: bold; 
+	opacity:.8;
+	-webkit-opacity:.8;
+	-moz-opacity:.8;
+	-ms-opacity:.8;
+	filter:alpha(opacity=80); 
+}*/
+.paging a 
+{
+    width:32px;
+    height:10px;
+    line-height:10px;
+    display:block;
+	text-decoration: none;
+	color: #fff;
+	float:left;
+	text-indent:-9999px;
+	background:#fff;
+	margin-right:4px;
+	_display:inline;
+	outline:none;
+}
+.paging a.active {
+	font-weight: bold; 
+	background:#193A63;
+}
+.img_news
+{
+    width:276px;
+    height:200px;
+    position: relative;
+    float:left;
+}
+.img_news h2
+{
+    width:100%;
+    position: absolute;
+    left:0;
+    bottom:0;
+    background:#333;
+    text-align:center;
+    color:#fff;
+    padding:4px 0;
+    font-size:18px;
+    opacity:.8;
+    -webkit-opacity:.8;
+	-moz-opacity:.8;
+	-ms-opacity:.8;
+	filter:alpha(opacity=80);
+}
+.img_news h2 a
+{
+    color:#fff;
+    text-decoration:none;
+}
+.img_news h2 a:hover
+{
+    text-decoration:underline;
+}

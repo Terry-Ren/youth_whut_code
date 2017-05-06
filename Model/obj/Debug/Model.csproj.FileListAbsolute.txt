@@ -1,0 +1,22 @@
+D:\VS 2010\Projects\AUTO\Model\bin\Debug\AUTO.Model.dll
+D:\VS 2010\Projects\AUTO\Model\bin\Debug\AUTO.Model.pdb
+D:\VS 2010\Projects\AUTO\Model\obj\Debug\AUTO.Model.dll
+D:\VS 2010\Projects\AUTO\Model\obj\Debug\AUTO.Model.pdb
+D:\VS 2010\Projects\AUTO\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\理工青年\理工青年\理工青年20160107\AUTO\Model\bin\Debug\AUTO.Model.dll
+D:\理工青年\理工青年\理工青年20160107\AUTO\Model\bin\Debug\AUTO.Model.pdb
+D:\理工青年\理工青年\理工青年20160107\AUTO\Model\obj\Debug\AUTO.Model.dll
+D:\理工青年\理工青年\理工青年20160107\AUTO\Model\obj\Debug\AUTO.Model.pdb
+C:\whutyouth\理工青年20160107\AUTO\Model\bin\Debug\AUTO.Model.dll
+C:\whutyouth\理工青年20160107\AUTO\Model\bin\Debug\AUTO.Model.pdb
+C:\whutyouth\理工青年20160107\AUTO\Model\obj\Debug\AUTO.Model.dll
+C:\whutyouth\理工青年20160107\AUTO\Model\obj\Debug\AUTO.Model.pdb
+F:\whut_youth\理工青年20160107\AUTO\Model\bin\Debug\AUTO.Model.dll
+F:\whut_youth\理工青年20160107\AUTO\Model\bin\Debug\AUTO.Model.pdb
+F:\whut_youth\理工青年20160107\AUTO\Model\obj\Debug\AUTO.Model.dll
+F:\whut_youth\理工青年20160107\AUTO\Model\obj\Debug\AUTO.Model.pdb
+C:\Users\user\Desktop\理工青年\理工青年\youth_server_code\Model\bin\Debug\AUTO.Model.dll
+C:\Users\user\Desktop\理工青年\理工青年\youth_server_code\Model\bin\Debug\AUTO.Model.pdb
+C:\Users\user\Desktop\理工青年\理工青年\youth_server_code\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\理工青年\理工青年\youth_server_code\Model\obj\Debug\AUTO.Model.dll
+C:\Users\user\Desktop\理工青年\理工青年\youth_server_code\Model\obj\Debug\AUTO.Model.pdb
