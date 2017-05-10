@@ -69,7 +69,7 @@
     <div class="maincontent fix">
         <div class="content">
             <div class="daohang">
-                当前位置：<a href="../youth_index.aspx">首页</a>><a href="youth_online.aspx">投稿</a></div>
+                <%--当前位置：<a href="../youth_index.aspx">首页</a>><a href="youth_online.aspx">投稿</a></div>--%>
             <div class="detail_content">
                 <p class="tg_title">
                     新闻标题<span id="tg_span_bt">请输入文章标题</span>
