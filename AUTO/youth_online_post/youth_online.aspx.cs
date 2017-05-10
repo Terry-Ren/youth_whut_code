@@ -90,7 +90,8 @@ namespace AUTO.youth_online_post
             }
         }
 
-        protected void ddl_news_type_SelectedIndexChanged(object sender, EventArgs e)
+        
+         protected void ddl_news_type_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddl_news_type.SelectedValue.ToString().Equals("3"))
             {
@@ -98,9 +99,10 @@ namespace AUTO.youth_online_post
             }
             else if (ddl_news_type.SelectedValue.ToString().Equals("4") || ddl_news_type.SelectedValue.ToString().Equals("8"))
             {
-                tg_ly.Enabled = false;
+                tg_ly.Enabled = true;
             }
         }
+        
 
     }
 }
