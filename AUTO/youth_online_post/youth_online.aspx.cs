@@ -68,7 +68,7 @@ namespace AUTO.youth_online_post
             }
             else if (ddl_news_type.SelectedValue.ToString().Equals("4") || ddl_news_type.SelectedValue.ToString().Equals("8"))
             {
-                news_model.News_source = 0;
+                news_model.News_source = Convert.ToInt32(tg_ly.SelectedValue.ToString());
             }
 
             news_model.Last_update = tg_zz.Text.ToString();
