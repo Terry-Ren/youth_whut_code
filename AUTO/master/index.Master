@@ -41,6 +41,7 @@
             <li><a href="../youth_index_files/youth_files_list.aspx?file_father_id=2">规章制度</a></li>
             <li><a href="http://whlgdx.hubei.qnzs.youth.cn/">青年之声</a></li>
             <li><a href="http://volunteers.whut.edu.cn/">志愿服务</a></li>
+            <li><a href="../youth_index_downloads/youth_downloads_list.aspx?download_father_id=1">常用下载</a></li>
             <%=bindMenu() %>
            
             
