@@ -1187,6 +1187,9 @@
     <Content Include="js\ckfinder\core\skins\silver\images\toolbar.separator.gif" />
     <Content Include="js\ckfinder\core\skins\silver\images\toolbar.start.gif" />
     <Content Include="youth_admin\css\all.css" />
+    <Content Include="youth_admin\Download\Download.aspx" />
+    <Content Include="youth_admin\Download\DownloadAdd.aspx" />
+    <Content Include="youth_admin\Download\DownloadUpd.aspx" />
     <Content Include="youth_admin\FileUpload\fileUpload.aspx" />
     <Content Include="youth_admin\FileUpload\fileUploadAdd.aspx" />
     <Content Include="youth_admin\FileUpload\fileUploadUpd.aspx" />
@@ -1530,6 +1533,27 @@
     <Compile Include="ueditor\net\NotSupportedHandler.cs" />
     <Compile Include="ueditor\net\PathFormater.cs" />
     <Compile Include="ueditor\net\UploadHandler.cs" />
+    <Compile Include="youth_admin\Download\Download.aspx.cs">
+      <DependentUpon>Download.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="youth_admin\Download\Download.aspx.designer.cs">
+      <DependentUpon>Download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="youth_admin\Download\DownloadAdd.aspx.cs">
+      <DependentUpon>DownloadAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="youth_admin\Download\DownloadAdd.aspx.designer.cs">
+      <DependentUpon>DownloadAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="youth_admin\Download\DownloadUpd.aspx.cs">
+      <DependentUpon>DownloadUpd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="youth_admin\Download\DownloadUpd.aspx.designer.cs">
+      <DependentUpon>DownloadUpd.aspx</DependentUpon>
+    </Compile>
     <Compile Include="youth_admin\FileUpload\fileUpload.aspx.cs">
       <DependentUpon>fileUpload.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
