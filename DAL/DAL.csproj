@@ -43,6 +43,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YouthAcademicDAL.cs" />
     <Compile Include="YouthDepDAL.cs" />
+    <Compile Include="YouthDownloadsColDAL.cs" />
+    <Compile Include="YouthDownloadsDAL.cs" />
     <Compile Include="YouthFilesColDAL.cs" />
     <Compile Include="YouthFilesDAL.cs" />
     <Compile Include="YouthInitialPwdDAL.cs" />

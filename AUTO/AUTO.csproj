@@ -1492,6 +1492,8 @@
     <Content Include="youth_huike\test.htm" />
     <Content Include="youth_huike\youth_meetingroom.aspx" />
     <Content Include="youth_huike\youth_meetingroomLy.aspx" />
+    <Content Include="youth_index_downloads\youth_download.aspx" />
+    <Content Include="youth_index_downloads\youth_downloads_list.aspx" />
     <Content Include="youth_index_files\youth_file.aspx" />
     <Content Include="youth_index_files\youth_files_list.aspx" />
     <Content Include="youth_index_jingpin\youth_jingpin_list.aspx" />
@@ -1856,6 +1858,20 @@
     </Compile>
     <Compile Include="youth_huike\youth_meetingroomLy.aspx.designer.cs">
       <DependentUpon>youth_meetingroomLy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="youth_index_downloads\youth_download.aspx.cs">
+      <DependentUpon>youth_download.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="youth_index_downloads\youth_download.aspx.designer.cs">
+      <DependentUpon>youth_download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="youth_index_downloads\youth_downloads_list.aspx.cs">
+      <DependentUpon>youth_downloads_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="youth_index_downloads\youth_downloads_list.aspx.designer.cs">
+      <DependentUpon>youth_downloads_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="youth_index_files\youth_file.aspx.cs">
       <DependentUpon>youth_file.aspx</DependentUpon>

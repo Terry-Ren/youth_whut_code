@@ -37,3 +37,11 @@ C:\Users\user\Desktop\理工青年\理工青年\youth_server_code\DBUtility\bin\
 C:\Users\user\Desktop\理工青年\理工青年\youth_server_code\DBUtility\obj\Debug\Utility.csprojResolveAssemblyReference.cache
 C:\Users\user\Desktop\理工青年\理工青年\youth_server_code\DBUtility\obj\Debug\AUTO.Utility.dll
 C:\Users\user\Desktop\理工青年\理工青年\youth_server_code\DBUtility\obj\Debug\AUTO.Utility.pdb
+E:\理工青年\理工青年\youth_whut_code\DBUtility\bin\Debug\AUTO.Utility.dll
+E:\理工青年\理工青年\youth_whut_code\DBUtility\bin\Debug\AUTO.Utility.pdb
+E:\理工青年\理工青年\youth_whut_code\DBUtility\bin\Debug\Maticsoft.Common.dll
+E:\理工青年\理工青年\youth_whut_code\DBUtility\bin\Debug\NPOI.dll
+E:\理工青年\理工青年\youth_whut_code\DBUtility\bin\Debug\Ionic.Zip.dll
+E:\理工青年\理工青年\youth_whut_code\DBUtility\obj\Debug\Utility.csprojResolveAssemblyReference.cache
+E:\理工青年\理工青年\youth_whut_code\DBUtility\obj\Debug\AUTO.Utility.dll
+E:\理工青年\理工青年\youth_whut_code\DBUtility\obj\Debug\AUTO.Utility.pdb
