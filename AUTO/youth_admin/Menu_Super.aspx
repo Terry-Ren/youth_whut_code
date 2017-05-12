@@ -100,6 +100,13 @@
                         用户管理</a></span></li>
                 </ul>
             </div>
+            <div title="下载管理" data-options="selected:true" style="padding: 2px; overflow: auto;"
+                runat="server" id="Div9">
+                <ul>
+                    <li><span><a href="#" class="easyui-linkbutton" onclick="addTab('下载管理','Download/Download.aspx')">
+                        下载管理</a></span></li>
+                </ul>
+            </div>
             <div title="文件管理" data-options="selected:true" style="padding: 2px; overflow: auto;"
                 runat="server" id="Div2">
                 <ul>
