@@ -57,6 +57,9 @@
     <Compile Include="DbHelperSQL.cs" />
     <Compile Include="DESEncrypt.cs" />
     <Compile Include="ExcelHelp.cs" />
+    <Compile Include="FSWatcher.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="MyUtil.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -66,6 +69,7 @@
     <Compile Include="SQLHelper.cs" />
     <Compile Include="SystemUtil.cs" />
     <Compile Include="VerifyCode.cs" />
+    <Compile Include="waterMark.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

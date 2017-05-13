@@ -43,6 +43,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YouthAcademic.cs" />
     <Compile Include="YouthDep.cs" />
+    <Compile Include="YouthDownload.cs" />
+    <Compile Include="YouthDownloadColumn.cs" />
     <Compile Include="YouthFile.cs" />
     <Compile Include="YouthFileColumn.cs" />
     <Compile Include="YouthInitialPsw.cs" />

@@ -20,13 +20,13 @@ namespace AUTO.youth_admin
         {
             if (!IsPostBack)
             {
-
                 //添加新闻
                 string operate_name = Session[Constant.adminName].ToString();
                 ViewState["operate_name"] = operate_name;
                 bindSorce();
                 bindNewsCol();
             }
+            FSWatcher fsw = new FSWatcher();
         }
 
         protected void bindNewsCol()
