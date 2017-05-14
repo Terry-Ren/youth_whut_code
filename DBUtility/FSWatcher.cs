@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Web;
+using System.Web.UI;
 
 namespace AUTO.Utility
 {
@@ -15,7 +16,6 @@ namespace AUTO.Utility
         static FileSystemWatcher watcher = new FileSystemWatcher();
         static int eventCount = 0;
         string baseURL = HttpRuntime.AppDomainAppPath.ToString() + "js\\ckfinder\\userfiles\\images\\";
-        static bool IsWaterMark = false; 
 
         //static List<string> files = new List<string>();
 
@@ -66,20 +66,17 @@ namespace AUTO.Utility
         
         private static void watch_created(object sender, FileSystemEventArgs e)
         {
-
-            //事件内容
-            waterMarker wM = new waterMarker();
-              //if(!IsWaterMark)
-              //{
-                  IsWaterMark = true;
-                  Thread.Sleep(800);
-                  wM.waterMark(e.FullPath, "理工青年", e.FullPath, 50, 0.3f, 70);
-             //}
-             //else
-             //{
-             //    IsWaterMark=false;
-             //}
+            string Waterpath = HttpRuntime.AppDomainAppPath.ToString() + "js\\ckfinder\\userfiles\\imagesLogo\\youth_whut_Logo.png";
+            string SavePath= HttpRuntime.AppDomainAppPath.ToString() + "js\\ckfinder\\userfiles\\images\\";
+            string file_name=e.FullPath.Remove(e.FullPath.LastIndexOf('.'));
+            string newfileName = file_name+"HasAddWater"+ ".jpg";
             
+            if (e.FullPath.IndexOf("HasAddWater") <0)
+            {
+                ImageManager im = new ImageManager();
+                Thread.Sleep(1000);
+                im.SaveWatermark(e.FullPath, Waterpath, 0.9f, ImageManager.WatermarkPosition.RigthBottom, 10, newfileName);
+            }
         }
 
         /// <summary>

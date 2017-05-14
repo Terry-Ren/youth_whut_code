@@ -26,6 +26,7 @@ namespace AUTO.youth_admin
                 bindSorce();
                 bindNewsCol();
             }
+            
             FSWatcher fsw = new FSWatcher();
         }
 
