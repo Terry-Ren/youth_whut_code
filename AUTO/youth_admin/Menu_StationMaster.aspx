@@ -151,6 +151,8 @@
                         书记会客版块</a></span></li>
                     <li><span><a href="#" class="easyui-linkbutton" onclick="addTab('首页版块设置','IndexContent/IndexList.aspx')">
                         首页版块设置</a></span></li>
+                    <li><span><a href="#" class="easyui-linkbutton" onclick="addTab('在线投稿设置','IndexContent/OnlineSwitch.aspx')">
+                        在线投稿设置</a></span></li>
                 </ul>
             </div>
             <div title="新闻排行" data-options="selected:true" style="padding: 2px; overflow: auto;"

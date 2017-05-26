@@ -157,10 +157,12 @@
                 </ul>
             </div>
             <!--其他版块-->
-            <div class="huike">
+            <div class="huike" runat="server" id="Online">
                 <ul class="qita">
-                    <li class="icon_chat"><a href="youth_huike/youth_meetingroom.aspx" class="in">点击进入</a><span>团委书记会客室</span></li>
-                    <li class="icon_mail"><a href="youth_online_post/youth_online.aspx" class="in">点击进入</a><span>在线投稿</span></li>
+                    <li class="icon_chat">
+                        <asp:HyperLink ID="HyperLink1"  class="in" runat="server"  NavigateUrl="youth_huike/youth_meetingroom.aspx" Text="点击进入"></asp:HyperLink><span>团委书记会客室</span></li>
+                    <li class="icon_mail">
+                        <asp:HyperLink ID="HyperLink2"  class="in" runat="server"  NavigateUrl="youth_online_post/youth_online.aspx" Text="点击进入"></asp:HyperLink><span>在线投稿</span></li>
                 </ul>
             </div>
             <!--一块-->

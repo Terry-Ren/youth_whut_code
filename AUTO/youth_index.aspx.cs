@@ -20,6 +20,7 @@ namespace AUTO
         YouthVideoBLL video_bll = new YouthVideoBLL();
         YouthTalkLgBLL talk_bll = new YouthTalkLgBLL();
         YouthAcademicBLL aca_bll = new YouthAcademicBLL();
+        YouthOnlineBLL online_bll = new YouthOnlineBLL();
 
         //设置新闻速递与第一条记录的ID,标题，时间，内容等
         public String news_fast_name = String.Empty;
@@ -105,8 +106,20 @@ namespace AUTO
                 bindVideo();
                 bindTalkLG();
                 bindRank();
+                DataSet ds = online_bll.GetListById();
+                if (Convert.ToInt32(ds.Tables[0].Rows[0]["online_switch"]) == 1)
+                {
+                    Online.Style.Value = "display:none";
+                    HyperLink1.Enabled = false;
+                }
+                if (Convert.ToInt32(ds.Tables[0].Rows[0]["online_switch"]) == 2)
+                {
+                    Online.Style.Value = "display:inline";
+                }
             }
         }
+
+
         //绑定新闻速递
         protected void bindNewsFast()
         {
