@@ -54,6 +54,7 @@
     <Compile Include="YouthMenuBLL.cs" />
     <Compile Include="YouthNewsBLL.cs" />
     <Compile Include="YouthNewsColBLL.cs" />
+    <Compile Include="YouthOnlineBLL.cs" />
     <Compile Include="YouthReceptionBLL.cs" />
     <Compile Include="YouthReceptionTypeBLL.cs" />
     <Compile Include="YouthRoleBLL.cs" />
