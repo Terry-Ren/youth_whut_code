@@ -51,6 +51,7 @@
     <Compile Include="YouthMenuDAL.cs" />
     <Compile Include="YouthNewsColDAL.cs" />
     <Compile Include="YouthNewsDAL.cs" />
+    <Compile Include="YouthOnlineDAL.cs" />
     <Compile Include="YouthReceptionDAL.cs" />
     <Compile Include="YouthReceptionTypeDAL.cs" />
     <Compile Include="YouthRoleDAL.cs" />

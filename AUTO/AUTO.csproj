@@ -1205,6 +1205,7 @@
     <Content Include="youth_admin\IndexContent\NewsColAdd.aspx" />
     <Content Include="youth_admin\IndexContent\NewsColList.aspx" />
     <Content Include="youth_admin\IndexContent\NewsColUpd.aspx" />
+    <Content Include="youth_admin\IndexContent\OnlineSwitch.aspx" />
     <Content Include="youth_admin\IndexContent\ReceptionType.aspx" />
     <Content Include="youth_admin\IndexContent\ReceptionTypeAdd.aspx" />
     <Content Include="youth_admin\IndexContent\ReceptionTypeUpd.aspx" />
@@ -1623,6 +1624,13 @@
     </Compile>
     <Compile Include="youth_admin\IndexContent\NewsColUpd.aspx.designer.cs">
       <DependentUpon>NewsColUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="youth_admin\IndexContent\OnlineSwitch.aspx.cs">
+      <DependentUpon>OnlineSwitch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="youth_admin\IndexContent\OnlineSwitch.aspx.designer.cs">
+      <DependentUpon>OnlineSwitch.aspx</DependentUpon>
     </Compile>
     <Compile Include="youth_admin\IndexContent\ReceptionType.aspx.cs">
       <DependentUpon>ReceptionType.aspx</DependentUpon>
