@@ -42,6 +42,14 @@
         </tr>
         <tr>
             <td>
+                修改意见：
+            </td>
+            <td>
+                <asp:TextBox ID="txt_revise" name="txtRevise"  runat="server" ></asp:TextBox><br />
+            </td>
+        </tr>
+        <tr>
+            <td>
                 投递时间:
             </td>
             <td>

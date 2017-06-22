@@ -274,6 +274,7 @@
     <Content Include="admin\js\themes\icons\edit_add.png" />
     <Content Include="admin\js\themes\icons\edit_remove.png" />
     <Content Include="admin\js\themes\icons\filesave.png" />
+    <Content Include="admin\js\themes\icons\firstcheck.png" />
     <Content Include="admin\js\themes\icons\help.png" />
     <Content Include="admin\js\themes\icons\mini_add.png" />
     <Content Include="admin\js\themes\icons\mini_edit.png" />

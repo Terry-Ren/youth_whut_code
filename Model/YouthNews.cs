@@ -23,6 +23,13 @@ namespace AUTO.Model
             set { news_title = value; }
         }
 
+        private string news_revise;
+
+        public string News_revise
+        {
+            get { return news_revise; }
+            set { news_revise = value; }
+        }
         private string news_content;
 
         public string News_content
@@ -101,6 +108,14 @@ namespace AUTO.Model
         {
             get { return last_update_time; }
             set { last_update_time = value; }
+        }
+
+        private string firse_check;
+
+        public string First_check
+        {
+            get { return firse_check; }
+            set { firse_check = value; }
         }
 
         private string is_check;

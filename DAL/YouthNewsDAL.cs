@@ -335,6 +335,10 @@ namespace AUTO.DAL
                 {
                     model.News_content = row["news_content"].ToString();
                 }
+                if (row["news_revise"] != null)
+                {
+                    model.News_revise = row["news_revise"].ToString();
+                }
                 if (row["news_father_id"] != null)
                 {
                     model.News_father_id = int.Parse(row["news_father_id"].ToString());
@@ -382,6 +386,14 @@ namespace AUTO.DAL
                 else
                 {
                     model.Last_update_time = DateTime.Today;
+                }
+                if (row["first_check"] != null)
+                {
+                    model.First_check = row["first_check"].ToString();
+                }
+                else
+                {
+                    model.First_check = "N";
                 }
                 if (row["is_check"] != null)
                 {
@@ -485,6 +497,7 @@ namespace AUTO.DAL
                     new SqlParameter("@news_source",SqlDbType.Int,8),
                     new SqlParameter("@last_updater",SqlDbType.NVarChar,25),
                     new SqlParameter("@last_update_time",SqlDbType.DateTime),
+                    new SqlParameter("@first_check",SqlDbType.VarChar,8),
                     new SqlParameter("@is_check",SqlDbType.VarChar,8),
                     new SqlParameter("@checker",SqlDbType.NVarChar,25),
                     new SqlParameter("@check_time",SqlDbType.DateTime),
@@ -502,11 +515,12 @@ namespace AUTO.DAL
             parameters[8].Value = model.News_source;
             parameters[9].Value = model.Last_update;
             parameters[10].Value = model.Last_update_time;
-            parameters[11].Value = model.Is_check;
-            parameters[12].Value = model.Checker;
-            parameters[13].Value = model.Check_time;
-            parameters[14].Value = model.Rechecker;
-            parameters[15].Value = model.Recheck_time;
+            parameters[11].Value = model.First_check;
+            parameters[12].Value = model.Is_check;
+            parameters[13].Value = model.Checker;
+            parameters[14].Value = model.Check_time;
+            parameters[15].Value = model.Rechecker;
+            parameters[16].Value = model.Recheck_time;
             int rows = DbHelperSQL.ExecuteSql(str.ToString(), parameters);
             return rows;
         }
@@ -522,6 +536,7 @@ namespace AUTO.DAL
             str.Append(" update news set ");
             str.Append(" news_title=@news_title,");
             str.Append(" news_content=@news_content,");
+            str.Append(" news_revise=@news_revise,");
             str.Append(" news_father_id=@news_father_id,");
             str.Append(" publisher=@publisher,");
             str.Append(" publisher_phone=@publisher_phone,");
@@ -531,7 +546,8 @@ namespace AUTO.DAL
             str.Append(" news_source=@news_source,");
             str.Append(" last_updater=@last_updater,");
             str.Append(" last_update_time=@last_update_time,");
-            str.Append("is_check=@is_check,");
+            str.Append(" first_check=@first_check,");
+            str.Append(" is_check=@is_check,");
             str.Append(" checker=@checker,");
             str.Append(" check_time=@check_time,");
             str.Append(" rechecker=@rechecker,");
@@ -542,6 +558,7 @@ namespace AUTO.DAL
             SqlParameter[] parameters = {
 					new SqlParameter("@news_title", SqlDbType.NVarChar,50),
                     new SqlParameter("@news_content",SqlDbType.NText),
+                    new SqlParameter("@news_revise",SqlDbType.NVarChar,50),
                     new SqlParameter("@news_father_id",SqlDbType.Int,8),
                     new SqlParameter("@publisher",SqlDbType.NVarChar,25),
                     new SqlParameter("@publisher_phone",SqlDbType.NVarChar,50),
@@ -551,6 +568,7 @@ namespace AUTO.DAL
                     new SqlParameter("@news_source",SqlDbType.Int,8),
                     new SqlParameter("@last_updater",SqlDbType.NVarChar,25),
                     new SqlParameter("@last_update_time",SqlDbType.DateTime),
+                    new SqlParameter("@first_check",SqlDbType.VarChar,8),
                     new SqlParameter("@is_check",SqlDbType.VarChar,8),
                     new SqlParameter("@checker",SqlDbType.NVarChar,25),
                     new SqlParameter("@check_time",SqlDbType.DateTime),
@@ -562,23 +580,25 @@ namespace AUTO.DAL
                                         };
             parameters[0].Value = model.News_title;
             parameters[1].Value = model.News_content;
-            parameters[2].Value = model.News_father_id;
-            parameters[3].Value = model.Publisher;
-            parameters[4].Value = model.Publisher_phone;
-            parameters[5].Value = model.Publisher_mail;
-            parameters[6].Value = model.Publish_time;
-            parameters[7].Value = model.Click_times;
-            parameters[8].Value = model.News_source;
-            parameters[9].Value = model.Last_update;
-            parameters[10].Value = model.Last_update_time;
-            parameters[11].Value = model.Is_check;
-            parameters[12].Value = model.Checker;
-            parameters[13].Value = model.Check_time;
-            parameters[14].Value = model.Rechecker;
-            parameters[15].Value = model.Recheck_time;
-            parameters[16].Value = model.Is_photoNews;
-            parameters[17].Value = model.Photo_url;
-            parameters[18].Value = model.News_id;
+            parameters[2].Value = model.News_revise;
+            parameters[3].Value = model.News_father_id;
+            parameters[4].Value = model.Publisher;
+            parameters[5].Value = model.Publisher_phone;
+            parameters[6].Value = model.Publisher_mail;
+            parameters[7].Value = model.Publish_time;
+            parameters[8].Value = model.Click_times;
+            parameters[9].Value = model.News_source;
+            parameters[10].Value = model.Last_update;
+            parameters[11].Value = model.Last_update_time;
+            parameters[12].Value = model.First_check;
+            parameters[13].Value = model.Is_check;
+            parameters[14].Value = model.Checker;
+            parameters[15].Value = model.Check_time;
+            parameters[16].Value = model.Rechecker;
+            parameters[17].Value = model.Recheck_time;
+            parameters[18].Value = model.Is_photoNews;
+            parameters[19].Value = model.Photo_url;
+            parameters[20].Value = model.News_id;
             int rows = DbHelperSQL.ExecuteSql(str.ToString(), parameters);
             return rows;
 
@@ -626,6 +646,56 @@ namespace AUTO.DAL
                                             new SqlParameter("@rechecker",SqlDbType.NVarChar,25),
                                             new SqlParameter("@recheck_time",SqlDbType.DateTime),
 					                        new SqlParameter("@news_id", SqlDbType.Int,8)
+                                        };
+            parameters[0].Value = operate_name;
+            parameters[1].Value = DateTime.Today;
+            parameters[2].Value = news_id;
+            int rows = DbHelperSQL.ExecuteSql(str.ToString(), parameters);
+            return rows;
+        }
+
+        /// <summary>
+        /// 初审新闻
+        /// </summary>
+        /// <param name="news_id"></param>
+        /// <returns></returns>
+        public int FirstCheckNews(int news_id, string operate_name)
+        {
+            StringBuilder str = new StringBuilder();
+            str.Append("update news set ");
+            str.Append(" first_check='Y', ");
+            str.Append(" checker=@checker, ");
+            str.Append(" check_time=@check_time ");
+            str.Append(" where news_id=@news_id ");
+            SqlParameter[] parameters = {
+                                            new SqlParameter("@checker",SqlDbType.NVarChar,25),
+                                            new SqlParameter("@check_time",SqlDbType.DateTime),
+                                            new SqlParameter("@news_id", SqlDbType.Int,8)
+                                        };
+            parameters[0].Value = operate_name;
+            parameters[1].Value = DateTime.Today;
+            parameters[2].Value = news_id;
+            int rows = DbHelperSQL.ExecuteSql(str.ToString(), parameters);
+            return rows;
+        }
+
+        /// <summary>
+        /// 退稿新闻
+        /// </summary>
+        /// <param name="news_id"></param>
+        /// <returns></returns>
+        public int RejectNews(int news_id, string operate_name)
+        {
+            StringBuilder str = new StringBuilder();
+            str.Append("update news set ");
+            str.Append(" first_check='N', ");
+            str.Append(" rechecker=@rechecker, ");
+            str.Append(" recheck_time=@recheck_time ");
+            str.Append(" where news_id=@news_id ");
+            SqlParameter[] parameters = {
+                                            new SqlParameter("@rechecker",SqlDbType.NVarChar,25),
+                                            new SqlParameter("@recheck_time",SqlDbType.DateTime),
+                                            new SqlParameter("@news_id", SqlDbType.Int,8)
                                         };
             parameters[0].Value = operate_name;
             parameters[1].Value = DateTime.Today;
