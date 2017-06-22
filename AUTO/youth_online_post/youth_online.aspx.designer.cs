@@ -31,13 +31,13 @@ namespace AUTO.youth_online_post {
         protected global::System.Web.UI.WebControls.DropDownList ddl_news_type;
         
         /// <summary>
-        /// tg_nr 控件。
+        /// txtContent 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tg_nr;
+        protected global::System.Web.UI.WebControls.TextBox txtContent;
         
         /// <summary>
         /// tg_zz 控件。

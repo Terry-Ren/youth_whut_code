@@ -3,7 +3,10 @@
     Debug="true" ValidateRequest="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script src="../js/ckeditor/ckeditor.js" type="text/javascript"></script>
+   <%-- <script src="../js/ckeditor/ckeditor.js" type="text/javascript"></script>--%>
+
+
+
     <script type="text/javascript">
         $(document).ready(function () {
             /*投稿*/
@@ -63,7 +66,21 @@
             //                }
             //            });
         });
+
     </script>
+    <script type="text/javascript">
+        function checkinput() {
+            document.getElementById("<%=txtContent.ClientID%>").value = ue.getContent;
+            return true;
+        }
+    </script>
+     <!--引入Ueditor配置文件  -->
+    <script type="text/javascript" src="../ueditor/ueditor.config.js"></script>
+    <!--引入Ueditor编辑器-->
+    <script type="text/javascript" src="../ueditor/ueditor.all.min.js"></script>
+
+
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="maincontent fix">
@@ -92,7 +109,17 @@
                     新闻内容<span id="tg_span_nr">请输入文章内容</span>
                 </p>
                 <p class="textarea_p">
-                    <asp:TextBox ID="tg_nr" name="txtContent" class="ckeditor" runat="server" TextMode="MultiLine"></asp:TextBox>
+                    <%--<asp:TextBox ID="tg_nr" name="txtContent" class="ckeditor" runat="server" TextMode="MultiLine"></asp:TextBox>
+               --%>
+                    <script type="text/plain" id="txtcontent" style="width:750px;height:300px;">
+                   
+                </script>
+                <asp:TextBox ID="txtContent" runat="server" style="display:none;"></asp:TextBox>
+                <script type="text/javascript">
+                    var ue = UE.getEditor('txtcontent');
+                 </script>
+
+
                 </p>
                 <p class="tg_title">
                     作者<span id="tg_span_xm">请输入作者姓名</span>
@@ -124,7 +151,7 @@
                     <img height="26" src="../CheckCode.ashx" onclick="this.src=this.src+'?r='+Math.random();"
                         title="单击刷新验证码" id="img_rrand_code">
                 </p>
-                <asp:Button ID="btn_submit" runat="server" Text="提交" class="tg_a" OnClick="btn_submit_Click" />
+                <asp:Button ID="btn_submit" runat="server" Text="提交" class="tg_a"  OnClientClick="return checkinput()" OnClick="btn_submit_Click" />
             </div>
         </div>
         <div class="side">
