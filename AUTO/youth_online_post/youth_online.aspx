@@ -111,7 +111,7 @@
                 <p class="textarea_p">
                     <%--<asp:TextBox ID="tg_nr" name="txtContent" class="ckeditor" runat="server" TextMode="MultiLine"></asp:TextBox>
                --%>
-                    <script type="text/plain" id="txtcontent" style="width:750px;height:300px;">
+                    <script type="text/plain" id="txtcontent" style="width:650px;height:300px;">
                    
                 </script>
                 <asp:TextBox ID="txtContent" runat="server" style="display:none;"></asp:TextBox>

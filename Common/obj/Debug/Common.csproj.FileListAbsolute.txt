@@ -27,6 +27,6 @@ D:\Github\youth_whut_code\Common\obj\Debug\AUTO.Common.dll
 D:\Github\youth_whut_code\Common\obj\Debug\AUTO.Common.pdb
 E:\理工青年\理工青年\youth_whut_code\Common\bin\Debug\AUTO.Common.dll
 E:\理工青年\理工青年\youth_whut_code\Common\bin\Debug\AUTO.Common.pdb
-E:\理工青年\理工青年\youth_whut_code\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
 E:\理工青年\理工青年\youth_whut_code\Common\obj\Debug\AUTO.Common.dll
 E:\理工青年\理工青年\youth_whut_code\Common\obj\Debug\AUTO.Common.pdb
+E:\理工青年\理工青年\youth_whut_code\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

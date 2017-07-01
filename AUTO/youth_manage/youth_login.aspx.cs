@@ -47,23 +47,23 @@ namespace AUTO.youth_manage
             //}
             AUTO.BLL.YouthUsersBLL user_bll = new BLL.YouthUsersBLL();
             bool i = user_bll.check_user(user_name, pwd, Role_id);
-            //if (i)
-            if(true)//测试专用
+            if (i)
+            //if(true)//测试专用
             {
                 //登录成功
                 //得到登录成功用户的id和角色id
-                //int user_id = user_bll.GetUserIdByName(user_name, pwd);
+                int user_id = user_bll.GetUserIdByName(user_name, pwd);
 
-                //YouthUsers model = new YouthUsers();
-                //model = user_bll.GetUserById(user_id);
+                YouthUsers model = new YouthUsers();
+                model = user_bll.GetUserById(user_id);
 
-                //Session[Constant.adminID] = user_id;
-                Session[Constant.adminID] = "7";
+                Session[Constant.adminID] = user_id;
+                //Session[Constant.adminID] = "7";
                 Session[Constant.roleID] = Role_id;
-                //Session[Constant.adminName] = user_name;
-                Session[Constant.adminName] = "测试开发专用";
-                //Session[Constant.AcademicID] = model.User_academic_id;
-                Session[Constant.AcademicID] = "测试专用";
+                Session[Constant.adminName] = user_name;
+                //Session[Constant.adminName] = "测试开发专用";
+                Session[Constant.AcademicID] = model.User_academic_id;
+                //Session[Constant.AcademicID] = "测试专用";
                 //根据Role_id跳转到不同页面
                 switch (Role_id)
                 {

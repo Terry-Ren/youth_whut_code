@@ -40,7 +40,7 @@
             <td>
                <%-- <asp:TextBox ID="txt_content" name="txtContent" class="ckeditor" runat="server" TextMode="MultiLine"></asp:TextBox><br />
            --%>
-                <script type="text/plain" id="txtcontent" style="width:750px;height:300px;">
+                <script type="text/plain" id="txtcontent" style="width:650px;height:300px;">
                    
                 </script>
                 <asp:TextBox ID="txt_content" runat="server" style="display:none;"></asp:TextBox>
