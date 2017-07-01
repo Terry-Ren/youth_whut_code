@@ -35,7 +35,7 @@ namespace AUTO.youth_admin.SpeSubject
             ddl_special.Items.FindByValue(model.Special_id.ToString()).Selected = true;
             ddl_sub.Items.FindByValue(model.Sub_id.ToString()).Selected = true;
             txtTitle.Text = model.Content_title;
-            txt_content.Text = model.Content_content;
+            txtContent.Text = model.Content_content;
             txt_click.Text = model.Content_click_times.ToString();
             txt_publisher.Text = model.Content_publisher;
             txt_phone.Text = model.Content_phone;
@@ -53,7 +53,7 @@ namespace AUTO.youth_admin.SpeSubject
             model.Special_id = Convert.ToInt32(ddl_special.SelectedValue);
             model.Sub_id = Convert.ToInt32(ddl_sub.SelectedValue);
             model.Content_title = txtTitle.Text.ToString();
-            model.Content_content = txt_content.Text.ToString();
+            model.Content_content = txtContent.Text.ToString();
             model.Content_publisher = txt_publisher.Text.ToString();
             model.Content_phone = txt_phone.Text.ToString();
             model.Content_email = txt_email.Text.ToString();

@@ -65,7 +65,7 @@ namespace AUTO.youth_admin.SpeSubject
             model.Special_id = Convert.ToInt32(ddl_special.SelectedValue);
             model.Sub_id = Convert.ToInt32(ddl_sub.SelectedValue);
             model.Content_title = txtTitle.Text.ToString();
-            model.Content_content = txt_content.Text.ToString();
+            model.Content_content = txtContent.Text.ToString();
             model.Content_publisher = txt_publisher.Text.ToString();
             model.Content_email = txt_email.Text.ToString();
             model.Content_phone = txt_phone.Text.ToString();
