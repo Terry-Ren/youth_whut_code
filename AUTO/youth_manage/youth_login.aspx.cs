@@ -38,16 +38,17 @@ namespace AUTO.youth_manage
             //int Role_id = Convert.ToInt32(ddlRole.SelectedValue);
             int Role_id = Convert.ToInt32(ddlRole.SelectedItem.Value);
             string check_code = txbCheck.Text.ToString().ToLower();
-            if (!check_code.Equals(Session[Constant.CheckCode].ToString()))
-            {
-                lblTip.Text = "验证码错误";
-                lblTip.Visible = true;
-                txbCheck.Text = "";
-                return;
-            }
+            //if (!check_code.Equals(Session[Constant.CheckCode].ToString()))
+            //{
+            //    lblTip.Text = "验证码错误";
+            //    lblTip.Visible = true;
+            //    txbCheck.Text = "";
+            //    return;
+            //}
             AUTO.BLL.YouthUsersBLL user_bll = new BLL.YouthUsersBLL();
             bool i = user_bll.check_user(user_name, pwd, Role_id);
             if (i)
+            //if(true)//测试专用
             {
                 //登录成功
                 //得到登录成功用户的id和角色id
@@ -57,9 +58,12 @@ namespace AUTO.youth_manage
                 model = user_bll.GetUserById(user_id);
 
                 Session[Constant.adminID] = user_id;
+                //Session[Constant.adminID] = "7";
                 Session[Constant.roleID] = Role_id;
                 Session[Constant.adminName] = user_name;
+                //Session[Constant.adminName] = "测试开发专用";
                 Session[Constant.AcademicID] = model.User_academic_id;
+                //Session[Constant.AcademicID] = "测试专用";
                 //根据Role_id跳转到不同页面
                 switch (Role_id)
                 {

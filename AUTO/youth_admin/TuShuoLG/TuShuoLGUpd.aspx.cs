@@ -31,7 +31,7 @@ namespace AUTO.youth_admin.TuShuoLG
             int talk_id = Convert.ToInt32(ViewState["talk_id"].ToString());
             model = bll.GetListById(talk_id);
             txtTitle.Text = model.Talk_title;
-            txt_content.Text = model.Talk_content;
+            txtContent.Text = model.Talk_content;
             txt_publisher.Text = model.Publisher;
             txt_phone.Text = model.Publisher_phone;
             txt_email.Text = model.Publisher_mail;
@@ -59,7 +59,7 @@ namespace AUTO.youth_admin.TuShuoLG
             {
                 model.Talk_Img_url = original_model.Talk_Img_url;
             }
-            model.Talk_content = txt_content.Text.ToString();
+            model.Talk_content = txtContent.Text.ToString();
             model.Publisher = txt_publisher.Text.ToString();
             model.Publisher_phone = txt_phone.Text.ToString();
             model.Publisher_mail = txt_email.Text.ToString();

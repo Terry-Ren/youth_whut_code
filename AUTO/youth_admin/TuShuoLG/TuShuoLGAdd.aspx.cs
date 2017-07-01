@@ -40,7 +40,7 @@ namespace AUTO.youth_admin.TuShuoLG
                 model.Talk_Img_url = url.Substring(3);
             }
             model.Talk_title = txtTitle.Text.ToString();
-            model.Talk_content = txt_content.Text.ToString();
+            model.Talk_content = txtContent.Text.ToString();
             model.Publisher = txt_publisher.Text.ToString();
             model.Publisher_phone = txt_phone.Text.ToString();
             model.Publisher_mail = txt_email.Text.ToString();

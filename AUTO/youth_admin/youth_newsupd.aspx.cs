@@ -35,7 +35,7 @@ namespace AUTO.youth_admin
             news_model = news_bll.GetYouthNews(news_id);
             txtTitle.Text = news_model.News_title;
             txt_clickTimes.Text = news_model.Click_times.ToString();
-            txt_content.Text = news_model.News_content;
+            txtContent.Text = news_model.News_content;
             txt_publisher.Text = news_model.Publisher;
             txt_publish_time.Text = news_model.Publish_time.ToString("yyyy-MM-dd");
             txt_phone.Text = news_model.Publisher_phone;
@@ -52,7 +52,7 @@ namespace AUTO.youth_admin
 
             news_model.News_id = news_id;
             news_model.News_title = txtTitle.Text.Trim().ToString();
-            news_model.News_content = txt_content.Text;
+            news_model.News_content = txtContent.Text;
             news_model.News_father_id = Convert.ToInt32(ddl_news_col.SelectedValue);
             news_model.Publisher = txt_publisher.Text.ToString();
             news_model.Publisher_phone = txt_phone.Text;

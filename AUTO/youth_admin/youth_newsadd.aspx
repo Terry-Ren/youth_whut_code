@@ -2,7 +2,7 @@
     CodeBehind="youth_newsadd.aspx.cs" Inherits="AUTO.youth_admin.youth_newsadd" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script src="../js/ckeditor/ckeditor.js" type="text/javascript"></script>
+    <%--<script src="../js/ckeditor/ckeditor.js" type="text/javascript"></script>--%>
     <script language="javascript" type="text/javascript">
         $(document).ready(function () {
             $("[id$=chkPic]").click(function () {
@@ -15,18 +15,27 @@
             });
         });
         function checkinput() {
+
+            document.getElementById("<%=txt_content.ClientID%>").value = ue.getContent();
+           
             if (document.getElementById("<%=txtTitle.ClientID%>").value.trim() == "") {
                 alert("必须填写新闻标题");
                 return false;
             }
 
-            //            if (document.getElementById("<%=txt_content.ClientID%>").value.trim() == "") {
-            //                alert("必须填写内容");
-            //                return false;
-            //            }
+            if (document.getElementById("<%=txt_content.ClientID%>").value.trim() == "") {
+                  alert("必须填写内容");
+                  return false;
+              }
+            
+            
             return true;
         }
     </script>
+    <!--引入Ueditor配置文件  -->
+    <script type="text/javascript" src="../ueditor/ueditor.config.js"></script>
+    <!--引入Ueditor编辑器-->
+    <script type="text/javascript" src="../ueditor/ueditor.all.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table id="addtable">
@@ -52,8 +61,17 @@
                 内容：
             </td>
             <td>
-                <asp:TextBox ID="txt_content" name="txtContent" class="ckeditor" runat="server" TextMode="MultiLine"></asp:TextBox><br />
+               <%-- <asp:TextBox ID="txt_content" name="txtContent" class="ckeditor" runat="server" TextMode="MultiLine"></asp:TextBox><br />--%>
+                <script type="text/plain" id="txtcontent" style="width:750px;height:300px;">
+                   
+                </script>
+                <asp:TextBox ID="txt_content" runat="server" style="display:none;"></asp:TextBox>
             </td>
+            <!--实例化编辑器-->
+        <script type="text/javascript">
+            var ue = UE.getEditor('txtcontent');
+            
+            </script>
         </tr>
         <tr>
             <td>
