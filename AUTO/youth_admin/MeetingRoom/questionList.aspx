@@ -10,7 +10,7 @@
             论坛类别:<asp:DropDownList ID="ddl_type" runat="server">
             </asp:DropDownList>
             标题：<asp:TextBox ID="txtWord" runat="server"></asp:TextBox>
-            是否回复：<asp:DropDownList ID="ddl_reply" runat="server">
+            是否回复：<asp:DropDownList ID="ddl_reply" runat="server" OnSelectedIndexChanged="ddl_reply_SelectedIndexChanged">
                 <asp:ListItem></asp:ListItem>
                 <asp:ListItem Value="1">已回复</asp:ListItem>
                 <asp:ListItem Value="0">未回复</asp:ListItem>

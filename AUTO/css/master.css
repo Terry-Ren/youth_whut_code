@@ -96,7 +96,7 @@ body{width:100%;}
 				.dongtao{width:314px; border:1px #0b79ce solid; padding-bottom:10px;}										
 					.dongtao ul{padding:10px 0; }				
 						.dongtao ul li{}				
-							.dongtao ul li a{ margin-left:14px; font-size:12px; text-align:center; display;block;}									
+							.dongtao ul li a{ margin-left:14px; font-size:12px; text-align:center; display:block;}									
 				.annou{width:276px; color:#ccc; padding-bottom:14px; overflow:hidden;}
 				.annou2{width:314px; color:#0b79ce; border:1px #0b79ce solid; padding-bottom:10px; background:url(febg.jpg) no-repeat right bottom;}
 					.mar-top{margin-top:12px;}
@@ -560,7 +560,7 @@ a{text-decoration:none; color:#000;}
 .block_two{width:1020px; margin:0 auto; height:888px;}
 .news_fast_two{width:460px;height:286px; overflow:hidden; margin:0 10px 10px;}
 .news_fast_two2{width:320px;}
-.news_fast_top{width:520px; height:367px; overflow:hidden;}
+.news_fast_top{width:420px; height:367px; overflow:hidden;}
 .block_title_tow{font-size:26px; border:none; position:relative; padding-bottom:4px;}
 .block_title_three{border-top:1px solid #ddd; padding:4px 0 4px 110px; line-height:22px;}
 .bright{border-top:1px solid #ddd; position:relative; height:20px; font-size:12px; padding-left:75px; padding-top:2px;}
@@ -624,7 +624,7 @@ font-weight:bold; color:#3B9DDE; height:34px; line-height:30px;}
 .in{float:right; font-size:14px; color:#3B9DDE;}
 .social_box{height:306px; overflow: hidden;}
 
-.img_fast_news_inner{width:460px; height:367px; overflow:hidden;}
+.img_fast_news_inner{width:560px; height:367px; overflow:hidden;}
 /*视频*/
 .block_video{width:1010px; margin:0 auto 0px; height:184px; overflow:hidden;}
 .block_video_inner{height:135px; }
