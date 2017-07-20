@@ -52,12 +52,14 @@
             <td>
                 <%--<asp:TextBox ID="txt_content" name="txtContent" class="ckeditor" runat="server" TextMode="MultiLine" Width="500px"></asp:TextBox><br />
             --%>
-<script type="text/plain" id="txtcontent" style="width:750px;height:300px;">
-                   
+                <script type="text/plain" id="txtcontent" style="width:750px;height:300px;">                   
                 </script>
                 <asp:TextBox ID="txtContent" runat="server" style="display:none;"></asp:TextBox>
                 <script type="text/javascript">
                     var ue = UE.getEditor('txtcontent');
+                    ue.ready(function () {
+                        ue.setContent(document.getElementById("<%=txtContent.ClientID%>").value);
+                    })
                  </script>
 
 

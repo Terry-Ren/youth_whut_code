@@ -27,7 +27,7 @@
                   alert("必须填写内容");
                   return false;
               }
-            
+            document.getElenmentById("<%=txt_content.ClientID%>").innerText = ue.getContent();
             
             return true;
         }
