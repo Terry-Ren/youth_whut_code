@@ -70,7 +70,7 @@
     </script>
     <script type="text/javascript">
         function checkinput() {
-            document.getElementById("<%=txtContent.ClientID%>").value = ue.getContent;
+            document.getElementById("<%=txt_content.ClientID%>").value = ue.getContent();
             return true;
         }
     </script>
@@ -111,10 +111,11 @@
                 <p class="textarea_p">
                     <%--<asp:TextBox ID="tg_nr" name="txtContent" class="ckeditor" runat="server" TextMode="MultiLine"></asp:TextBox>
                --%>
-                    <script type="text/plain" id="txtcontent" style="width:650px;height:300px;">
+                    <script type="text/plain" id="txtcontent" style="width:650px; height:300px;">
                    
                 </script>
-                <asp:TextBox ID="txtContent" runat="server" style="display:none;"></asp:TextBox>
+                <asp:TextBox ID="txt_content" runat="server" style="display:none;"></asp:TextBox>
+
                 <script type="text/javascript">
                     var ue = UE.getEditor('txtcontent');
                  </script>

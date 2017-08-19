@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using AUTO.BLL;
 using AUTO.Model;
 using System.Data;
@@ -53,7 +48,7 @@ namespace AUTO
         //加载侧边栏数据
         protected void bindNewsCeBian()
         {
-            DataSet ds = news_bll.GetList(5, " news_father_id= " + news_col_id, " publish_time desc  ");
+            DataSet ds = news_bll.GetList(5, " news_father_id= " + news_col_id + " and is_check = 'Y' ", " publish_time desc  ");
             rptCeBian.DataSource = ds;
             rptCeBian.DataBind();
         }

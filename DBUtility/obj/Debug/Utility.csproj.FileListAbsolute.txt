@@ -52,4 +52,3 @@ E:\理工青年\理工青年\youth_whut_code\DBUtility\bin\Debug\NPOI.dll
 E:\理工青年\理工青年\youth_whut_code\DBUtility\bin\Debug\Ionic.Zip.dll
 E:\理工青年\理工青年\youth_whut_code\DBUtility\obj\Debug\AUTO.Utility.dll
 E:\理工青年\理工青年\youth_whut_code\DBUtility\obj\Debug\AUTO.Utility.pdb
-E:\理工青年\理工青年\youth_whut_code\DBUtility\obj\Debug\Utility.csprojResolveAssemblyReference.cache

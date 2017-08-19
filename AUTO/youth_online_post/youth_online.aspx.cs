@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data;
 using AUTO.BLL;
 using AUTO.Model;
@@ -52,7 +47,7 @@ namespace AUTO.youth_online_post
                 return;
             }
             news_model.News_title = tg_bt.Text.ToString();
-            news_model.News_content = txtContent.Text.ToString();
+            news_model.News_content = txt_content.Text.ToString();
             // "记者在线","基层团建","学生组织"; 
             news_model.News_father_id = Convert.ToInt32(ddl_news_type.SelectedValue.ToString());
             news_model.Publisher = tg_zz.Text.ToString();
