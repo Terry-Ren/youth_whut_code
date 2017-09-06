@@ -37,11 +37,11 @@
     <!--=====导航=====-->
     <div class="nav_box">
         <ul id="muen">
-            <li><a href="../youth_index.aspx">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
-            <li><a href="../youth_index_files/youth_files_list.aspx?file_father_id=2">规章制度</a></li>
-            <li><a href="http://whlgdx.hubei.qnzs.youth.cn/">青年之声</a></li>
-            <li><a href="http://volunteers.whut.edu.cn/">志愿服务</a></li>
-            <li><a href="../youth_index_downloads/youth_downloads_list.aspx?download_father_id=1">常用下载</a></li>
+            <li><a href="../youth_index.aspx"  target="_blank">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+            <li><a href="../youth_index_files/youth_files_list.aspx?file_father_id=2"  target="_blank">规章制度</a></li>
+            <li><a href="http://whlgdx.hubei.qnzs.youth.cn/"  target="_blank">青年之声</a></li>
+            <li><a href="http://volunteers.whut.edu.cn/"  target="_blank">志愿服务</a></li>
+            <li><a href="../youth_index_downloads/youth_downloads_list.aspx?download_father_id=1"  target="_blank">常用下载</a></li>
             <%=bindMenu() %>
            
             
@@ -60,13 +60,13 @@
     <div class="copyright">
         <div class="copyright_inner">
             <p>
-                <a href="http://www.whut.edu.cn" target="_blank">武汉理工大学</a><a href="http://jwc.whut.edu.cn/">武汉理工大学教务处</a><a
-                    href="http://www.wutnews.net/">经纬网</a><a href="http://stuplaza.whut.edu.cn/frontUI/stuplaza_Index.aspx">学工广场</a><a href="http://www.hbgqt.org.cn/">共青团湖北省委</a>
-                <a href="http://www.zgzyz.org.cn/">中国志愿者网</a>
+                <a href="http://www.whut.edu.cn" target="_blank">武汉理工大学</a><a href="http://jwc.whut.edu.cn/"  target="_blank">武汉理工大学教务处</a><a
+                    href="http://www.wutnews.net/"  target="_blank">经纬网</a><a href="http://stuplaza.whut.edu.cn/frontUI/stuplaza_Index.aspx"  target="_blank">学工广场</a><a href="http://www.hbgqt.org.cn/"  arget="_blank">共青团湖北省委</a>
+                <a href="http://www.zgzyz.org.cn/"  target="_blank">中国志愿者网</a>
 
             </p>
             <p>
-                <a href="../youth_manage/youth_login.aspx">后台登陆</a></p>
+                <a href="../youth_manage/youth_login.aspx"  target="_blank">后台登陆</a></p>
             <p>
                 版权所有 © 武汉理工大学理工青年 地址：湖北省武汉市洪山区珞狮路122号</p>
         </div>
