@@ -26,7 +26,7 @@ namespace AUTO.youth_admin
                 bindSorce();
                 bindNewsCol();
             }
-            
+
             FSWatcher fsw = new FSWatcher();
         }
 
@@ -58,6 +58,7 @@ namespace AUTO.youth_admin
             ddlNewsCol.DataBind();
             ddlNewsCol.Items.Insert(0, new ListItem("", "0"));
         }
+
 
         protected void lbtnSave_Click(object sender, EventArgs e)
         {

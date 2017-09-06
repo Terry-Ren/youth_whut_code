@@ -46,6 +46,7 @@ namespace AUTO.youth_online_post
                 MyUtil.ShowMessage(this.Page, "邮箱不能为空");
                 return;
             }
+            
             if (String.IsNullOrEmpty(txt_phone.Text.ToString()))
             {
                 MyUtil.ShowMessage(this.Page, "电话不能为空");
@@ -73,6 +74,7 @@ namespace AUTO.youth_online_post
 
             news_model.Last_update = tg_zz.Text.ToString();
             news_model.Last_update_time = DateTime.Now;
+            news_model.First_check = "N";
             news_model.Is_check = "N";
             news_model.Checker = "";
             news_model.Check_time = DateTime.Now;

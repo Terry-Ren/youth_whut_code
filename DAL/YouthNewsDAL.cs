@@ -482,8 +482,8 @@ namespace AUTO.DAL
         {
             StringBuilder str = new StringBuilder();
             str.Append("insert into news (");
-            str.Append("news_title,news_content,news_father_id,publisher,publisher_phone, publisher_mail,publish_time,click_times,news_source,last_updater,last_update_time,is_check,checker,check_time,rechecker,recheck_time)");
-            str.Append(" values (@news_title,@news_content,@news_father_id,@publisher,@publisher_phone, @publisher_mail,@publish_time,@click_times,@news_source,@last_updater,@last_update_time,@is_check,@checker,@check_time,@rechecker,@recheck_time");
+            str.Append("news_title,news_content,news_father_id,publisher,publisher_phone, publisher_mail,publish_time,click_times,news_source,last_updater,last_update_time,first_check,is_check,checker,check_time,rechecker,recheck_time)");
+            str.Append(" values (@news_title,@news_content,@news_father_id,@publisher,@publisher_phone, @publisher_mail,@publish_time,@click_times,@news_source,@last_updater,@last_update_time,@first_check,@is_check,@checker,@check_time,@rechecker,@recheck_time");
             str.Append(")");
             SqlParameter[] parameters = {
 					new SqlParameter("@news_title", SqlDbType.NVarChar,50),

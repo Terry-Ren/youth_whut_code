@@ -27,6 +27,7 @@ namespace AUTO.youth_admin
                 bindSorce();
                 bindNewsCol();
                 bindData(news_id);
+                bindRevise();
             }
         }
 
@@ -46,6 +47,14 @@ namespace AUTO.youth_admin
 
         }
 
+        //是否能够修改[修改意见]
+        protected void bindRevise()
+        {
+            int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
+            AUTO.BLL.YouthNewsColBLL bll = new BLL.YouthNewsColBLL();
+            if (role_id == 3 || role_id == 4)
+                txt_revise.Enabled = false;
+        }
         protected void lbtnSave_Click(object sender, EventArgs e)
         {
             int news_id = Convert.ToInt32(ViewState["news_id"].ToString());

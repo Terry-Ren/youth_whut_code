@@ -102,7 +102,7 @@ namespace AUTO.youth_admin
                 default:
                     //站长和超级管理员默认读取所有新闻
                     pageTotal = news_bll.GetRecordCount(" 1=1 " + GetWhereSql());
-                    DataSet ds = news_bll.GetListByPage(" 1=1 and first_check='Y' " + GetWhereSql(), pageSize, pageIndex, "publish_time desc ");
+                    DataSet ds = news_bll.GetListByPage(" 1=1 " + GetWhereSql(), pageSize, pageIndex, "publish_time desc ");
                     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                     {
                         string first_check = ds.Tables[0].Rows[i]["first_check"].ToString();
@@ -230,6 +230,7 @@ namespace AUTO.youth_admin
                     if (cbx.Checked == true)
                     {
                         int id = Convert.ToInt32(gvwData.DataKeys[i].Value);
+                        news_bll.FirstCheckNews(id, ViewState["operate_name"].ToString());
                         news_bll.CheckNews(id, ViewState["operate_name"].ToString());
                         int source_id = news_bll.GetSourceById(id);
                         aca_bll.UpdateRank(source_id);
@@ -242,7 +243,7 @@ namespace AUTO.youth_admin
             }
         }
 
-        //取消审核——反审核新闻
+        //退稿
         protected void lbtnReCheck_Click(object sender, EventArgs e)
         {
             int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
@@ -268,7 +269,7 @@ namespace AUTO.youth_admin
                     }
                 }
                 bindData();
-                String message = "成功取消审核" + success + "条记录！";
+                String message = "成功退稿" + success + "条记录！";
                 MyUtil.ShowMessage(this, message);
             }
         }
@@ -277,7 +278,7 @@ namespace AUTO.youth_admin
         protected void lbtnFirstCheck_Click(object sender, EventArgs e)
         {
             int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
-            if (role_id != 3)
+            if (role_id == 4)
             {
                 String message = "对不起，您没有相应权限";
                 MyUtil.ShowMessage(this.Page, message);
@@ -300,11 +301,11 @@ namespace AUTO.youth_admin
             }
         }
 
-        //退稿
+        //取消初审核
         protected void lbtnReject_Click(object sender, EventArgs e)
         {
             int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
-            if (role_id ==3)
+            if (role_id ==3||role_id==4)
             {
                 String message = "对不起，您没有相应权限";
                 MyUtil.ShowMessage(this.Page, message);
@@ -322,7 +323,7 @@ namespace AUTO.youth_admin
                     }
                 }
                 bindData();
-                String message = "成功退稿！";
+                String message = "成功取消初审核！";
                 MyUtil.ShowMessage(this, message);
             }
         }
@@ -331,7 +332,7 @@ namespace AUTO.youth_admin
         protected void lbtnDelete_Click(object sender, EventArgs e)
         {
             int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
-            if (role_id == 4)
+            if (role_id == 4||role_id==3)
             {
                 String message = "对不起，您没有相应权限";
                 MyUtil.ShowMessage(this.Page, message);
@@ -368,13 +369,16 @@ namespace AUTO.youth_admin
         protected void lbtnEdit_Click(object sender, EventArgs e)
         {
             int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
-            if (role_id == 4)
+            /*
+             * if (role_id == 4)
             {
                 String message = "对不起，您没有相应权限";
                 MyUtil.ShowMessage(this.Page, message);
                 return;
             }
+
             else
+            */
             {
                 LinkButton lbtn = (LinkButton)sender;
                 int news_id = Convert.ToInt32(lbtn.CommandArgument);
