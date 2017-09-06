@@ -242,7 +242,7 @@ namespace AUTO.Utility
         /// <param name="writepath">保存路径(包含完整路径,文件名及其扩展名): string</param>
         public void Save(string readpath, string writepath)
         {
-            
+
             if (string.Compare(readpath, writepath) == 0)
                 throw new ArgumentException("源图片与目标图片地址相同");
             try
@@ -303,7 +303,7 @@ namespace AUTO.Utility
         /// <param name="writepath">保存路径(包含完整路径,文件名及其扩展名): string</param>
         public void SaveWatermark(string readpath, string watermarkpath, float transparence, WatermarkPosition position, int margin, string writepath)
         {
-            
+
             if (string.Compare(readpath, writepath) == 0)
                 throw new ArgumentException("源图片与目标图片地址相同");
             if (transparence == 0.0f)
@@ -318,7 +318,7 @@ namespace AUTO.Utility
             if (file.Exists)//判断文件是否存在
             {
                 file.Delete();
-                string file_name = writepath.Replace("HasAddWater","");
+                string file_name = writepath.Replace("HasAddWater", "");
                 fileAdd.MoveTo(file_name);
             }
         }

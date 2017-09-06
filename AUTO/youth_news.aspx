@@ -33,12 +33,12 @@
         <div class="side">
             <div class="annou hei1 fix">
                 <h2 class="block_title" style="border-top: none;">
-                    <a href='youth_news_list.aspx?news_col_id=<%=news_col_id %>' class="more">more</a><%=news_col_name %><span><%--XINWEN SUDI--%></span></h2>
+                    <a href='youth_news_list.aspx?news_col_id=<%=news_col_id %>' class="more" target="_blank">more</a><%=news_col_name %><span><%--XINWEN SUDI--%></span></h2>
                 <div class="news_list">
                     <ul>
                         <asp:Repeater ID="rptCeBian" runat="server">
                             <ItemTemplate>
-                                <li><a href='youth_news.aspx?news_id=<%#Eval("news_id") %>' title='<%# Eval("news_title")%>'>
+                                <li><a href='youth_news.aspx?news_id=<%#Eval("news_id") %>' title='<%# Eval("news_title")%>' target="_blank">
                                     <%#Eval("news_title") %></a> </li>
                             </ItemTemplate>
                         </asp:Repeater>

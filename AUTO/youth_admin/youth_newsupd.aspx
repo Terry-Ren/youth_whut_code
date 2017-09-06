@@ -7,7 +7,7 @@
 
     <script type="text/javascript">
         function checkinput() {
-            document.getElementById("<%=txtContent.ClientID%>").value = ue.getContent;
+            document.getElementById("<%=txtContent.ClientID%>").value = ue.getContent();
             return true;
         }
     </script>

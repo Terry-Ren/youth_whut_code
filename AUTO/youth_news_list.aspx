@@ -38,7 +38,7 @@
                     <ul>
                         <asp:Repeater ID="rpt_news_list" runat="server">
                             <ItemTemplate>
-                                <li><a href='youth_news.aspx?news_id=<%#Eval("news_id") %>' title='<%# Eval("news_title")%>'>
+                                <li><a href='youth_news.aspx?news_id=<%#Eval("news_id") %>' title='<%# Eval("news_title")%>' target="_blank">
                                     <%# CutString(Eval("news_title").ToString()) %></a> <span>
                                         <%# FormatTime((DateTime)Eval("publish_time"))%></span></li>
                             </ItemTemplate>
@@ -60,13 +60,13 @@
         <div class="side">
             <div class="annou hei1 fix">
                 <h2 class="block_title" style="border-top: none;">
-                    <a href='youth_news_list.aspx?news_col_id=<%=news_col_id %>' class="more">more</a><label
+                    <a href='youth_news_list.aspx?news_col_id=<%=news_col_id %>' class="more" target="_blank">more</a><label
                         id="lblTitle" runat="server"></label><span><%--XINWEN SUDI--%></span></h2>
                 <div class="news_list">
                     <ul>
                         <asp:Repeater ID="rptCeBian" runat="server">
                             <ItemTemplate>
-                                <li><a href='youth_news.aspx?news_id=<%#Eval("news_id") %>' title='<%# Eval("news_title")%>'>
+                                <li><a href='youth_news.aspx?news_id=<%#Eval("news_id") %>' title='<%# Eval("news_title")%>' target="_blank">
                                     <%# CutString(Eval("news_title").ToString()) %></a> </li>
                             </ItemTemplate>
                         </asp:Repeater>
