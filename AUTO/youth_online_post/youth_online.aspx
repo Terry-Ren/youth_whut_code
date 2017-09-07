@@ -69,11 +69,75 @@
 
     </script>
     <script type="text/javascript">
+
+        function alertMessage(message) {
+            alert(message);
+        }
+
         function checkinput() {
-            document.getElementById("<%=txt_content.ClientID%>").value = ue.getContent();
-            return true;
+            //检查用户输入信息
+            var title = document.getElementById("<%=tg_bt.ClientID%>").value;
+            var type = document.getElementById("<%=ddl_news_type.ClientID%>").value;
+            var content = ue.getContent();
+            var writerName = document.getElementById("<%=tg_zz.ClientID%>").value;
+            var tel = document.getElementById("<%=txt_phone.ClientID%>").value;
+            var email = document.getElementById("<%=tg_yx.ClientID%>").value;
+            var region = document.getElementById("<%=tg_ly.ClientID%>").value;
+            var checkcode = document.getElementById("<%=txt_Check.ClientID%>").value;
+
+            if (title != "") {
+                if (type != "-1") {
+                    if (content != "") {
+                        if (writerName != "") {
+                            if (tel != "" && (/^1[34578]\d{9}$/.test(tel))) {
+                                if (email != "" && (/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/.test(email))) {
+                                    if (region != "-1") {
+                                        if (checkcode != "") {
+                                            document.getElementById("<%=txt_content.ClientID%>").value = ue.getContent();
+                                            return true;
+                                        }
+                                        else {
+                                            alertMessage('验证码不能为空！');
+                                            return false;
+                                        }
+                                    }
+                                    else {
+                                        alertMessage('未选择新闻来源！');
+                                        return false;
+                                    }
+                                }
+                                else {
+                                    alertMessage('未填写邮箱地址或邮箱地址格式错误！');
+                                    return false;
+                                }
+                            }
+                            else {
+                                alertMessage('未填写联系电话或联系电话格式错误！');
+                                return false;
+                            }
+                        }
+                        else {
+                            alertMessage('未填写作者姓名！');
+                            return false;
+                        }
+                    }
+                    else {
+                        alertMessage('新闻内容不能为空！');
+                        return false;
+                    }
+                }
+                else {
+                    alertMessage('未选择新闻类型！');
+                    return false;
+                }
+            }
+            else {
+                alertMessage('新闻标题不能为空！');
+                return false;
+            }
         }
     </script>
+
      <!--引入Ueditor配置文件  -->
     <script type="text/javascript" src="../ueditor/ueditor.config.js"></script>
     <!--引入Ueditor编辑器-->
@@ -97,9 +161,8 @@
                     新闻类型<span id="tg_span_type">请选择新闻类型</span>
                 </p>
                 <p class="input_p">
-                    <asp:DropDownList ID="ddl_news_type" runat="server" OnSelectedIndexChanged="ddl_news_type_SelectedIndexChanged"
-                        AutoPostBack="true">
-                        <asp:ListItem></asp:ListItem>
+                    <asp:DropDownList ID="ddl_news_type" runat="server">
+                        <asp:ListItem Value="-1" Selected="True">请选择类型</asp:ListItem>
                         <asp:ListItem Value="3">原创文学</asp:ListItem>
                         <asp:ListItem Value="4">社团天地</asp:ListItem>
                         <asp:ListItem Value="8">基层团建</asp:ListItem>
@@ -111,7 +174,7 @@
                 <p class="textarea_p">
                     <%--<asp:TextBox ID="tg_nr" name="txtContent" class="ckeditor" runat="server" TextMode="MultiLine"></asp:TextBox>
                --%>
-                    <script type="text/plain" id="txtcontent" style="width:650px; height:300px;">
+                <script type="text/plain" id="txtcontent" style="width:650px; height:300px;">
                    
                 </script>
                 <asp:TextBox ID="txt_content" runat="server" style="display:none;"></asp:TextBox>
@@ -142,7 +205,6 @@
                     新闻来源<span id="tg_span_ly">请选择来源</span></p>
                 <p class="input_p">
                     <asp:DropDownList ID="tg_ly" runat="server">
-                        <asp:ListItem Value="0"></asp:ListItem>
                     </asp:DropDownList>
                 </p>
                 <p class="tg_title">

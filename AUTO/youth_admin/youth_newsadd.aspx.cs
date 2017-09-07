@@ -26,7 +26,7 @@ namespace AUTO.youth_admin
                 bindSorce();
                 bindNewsCol();
             }
-            
+
             FSWatcher fsw = new FSWatcher();
         }
 
@@ -52,11 +52,17 @@ namespace AUTO.youth_admin
                     ds = bll.GetNewsColList(" news_column_id >2 and news_column_id<6  ");
                     break;
             }
+
+            DataTable dtSource = ds.Tables[0];
+            DataRow newRow = dtSource.NewRow();
+            newRow["news_column_id"] = "-1";
+            newRow["news_column_name"] = "请选择类型";
+            dtSource.Rows.InsertAt(newRow, 0);
+
             ddlNewsCol.DataValueField = "news_column_id";
             ddlNewsCol.DataTextField = "news_column_name";
-            ddlNewsCol.DataSource = ds;
+            ddlNewsCol.DataSource = dtSource;
             ddlNewsCol.DataBind();
-            ddlNewsCol.Items.Insert(0, new ListItem("", "0"));
         }
 
         protected void lbtnSave_Click(object sender, EventArgs e)
@@ -95,9 +101,16 @@ namespace AUTO.youth_admin
         protected void bindSorce()
         {
             DataSet ds = aca_bll.GetAcademic();
+
+            DataTable dtSource = ds.Tables[0];
+            DataRow newRow = dtSource.NewRow();
+            newRow["academic_id"] = "-1";
+            newRow["academic_name"] = "请选择来源";
+            dtSource.Rows.InsertAt(newRow, 0);
+
             ddl_source.DataValueField = "academic_id";
             ddl_source.DataTextField = "academic_name";
-            ddl_source.DataSource = ds;
+            ddl_source.DataSource = dtSource;
             ddl_source.DataBind();
         }
 
