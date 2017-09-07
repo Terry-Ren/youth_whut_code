@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data;
 using AUTO.BLL;
 using AUTO.Model;
@@ -28,9 +23,16 @@ namespace AUTO.youth_online_post
         protected void bindSource()
         {
             DataSet ds = aca_bll.GetAcademic();
+            DataTable dtSource = ds.Tables[0];
+
+            DataRow newRow = dtSource.NewRow();
+            newRow["academic_id"] = "-1";
+            newRow["academic_name"] = "请选择来源";
+            dtSource.Rows.InsertAt(newRow, 0);
+
             this.tg_ly.DataValueField = "academic_id";
             this.tg_ly.DataTextField = "academic_name";
-            this.tg_ly.DataSource = ds;
+            this.tg_ly.DataSource = dtSource;
             this.tg_ly.DataBind();
         }
 
@@ -39,19 +41,10 @@ namespace AUTO.youth_online_post
             if (!txt_Check.Text.Equals(Session[Constant.CheckCode].ToString()))
             {
                 //验证码有误
+                MyUtil.ShowMessage(this.Page, "验证码错误");
                 return;
             }
-            if (String.IsNullOrEmpty(tg_yx.Text.ToString()))
-            {
-                MyUtil.ShowMessage(this.Page, "邮箱不能为空");
-                return;
-            }
-            
-            if (String.IsNullOrEmpty(txt_phone.Text.ToString()))
-            {
-                MyUtil.ShowMessage(this.Page, "电话不能为空");
-                return;
-            }
+
             news_model.News_title = tg_bt.Text.ToString();
             news_model.News_content = txt_content.Text.ToString();
             // "记者在线","基层团建","学生组织"; 
@@ -74,7 +67,6 @@ namespace AUTO.youth_online_post
 
             news_model.Last_update = tg_zz.Text.ToString();
             news_model.Last_update_time = DateTime.Now;
-            news_model.First_check = "N";
             news_model.Is_check = "N";
             news_model.Checker = "";
             news_model.Check_time = DateTime.Now;

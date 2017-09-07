@@ -14,22 +14,65 @@
                 }
             });
         });
-        function checkinput() {
 
-            document.getElementById("<%=txt_content.ClientID%>").value = ue.getContent();
-           
-            if (document.getElementById("<%=txtTitle.ClientID%>").value.trim() == "") {
-                alert("必须填写新闻标题");
+        function alertMessage(message) {
+            alert(message);
+        }
+
+        function checkinput() {
+            //检查用户输入信息
+            var title = document.getElementById("<%=txtTitle.ClientID%>").value;
+            var type = document.getElementById("<%=ddlNewsCol.ClientID%>").value;
+            var content = ue.getContent();
+            var writerName = document.getElementById("<%=txt_publisher.ClientID%>").value;
+            var tel = document.getElementById("<%=txt_phone.ClientID%>").value;
+            var email = document.getElementById("<%=txt_email.ClientID%>").value;
+            var region = document.getElementById("<%=ddl_source.ClientID%>").value;
+
+            if (title != "") {
+                if (type != "-1") {
+                    if (content != "") {
+                        if (writerName != "") {
+                            if (tel != "" && (/^1[34578]\d{9}$/.test(tel))) {
+                                if (email != "" && (/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/.test(email))) {
+                                    if (region != "-1") {
+                                        document.getElementById("<%=txt_content.ClientID%>").value = ue.getContent();
+                                        return true;
+                                    }
+                                    else {
+                                        alertMessage('未选择新闻来源！');
+                                        return false;
+                                    }
+                                }
+                                else {
+                                    alertMessage('未填写邮箱地址或邮箱地址格式错误！');
+                                    return false;
+                                }
+                            }
+                            else {
+                                alertMessage('未填写联系电话或联系电话格式错误！');
+                                return false;
+                            }
+                        }
+                        else {
+                            alertMessage('未填写作者姓名！');
+                            return false;
+                        }
+                    }
+                    else {
+                        alertMessage('新闻内容不能为空！');
+                        return false;
+                    }
+                }
+                else {
+                    alertMessage('未选择新闻类型！');
+                    return false;
+                }
+            }
+            else {
+                alertMessage('新闻标题不能为空！');
                 return false;
             }
-
-            if (document.getElementById("<%=txt_content.ClientID%>").value.trim() == "") {
-                  alert("必须填写内容");
-                  return false;
-              }
-            document.getElenmentById("<%=txt_content.ClientID%>").innerText = ue.getContent();
-            
-            return true;
         }
     </script>
     <!--引入Ueditor配置文件  -->
