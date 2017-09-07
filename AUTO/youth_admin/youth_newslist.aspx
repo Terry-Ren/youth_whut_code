@@ -30,9 +30,13 @@
             <asp:LinkButton ID="lbtnSearch" runat="server" CssClass="easyui-linkbutton" data-options="plain:true,iconCls:'icon-search'"
                 OnClick="lbtnSearch_Click">搜索</asp:LinkButton>
             <asp:LinkButton ID="lbtnCheck" runat="server" CssClass="easyui-linkbutton" data-options="plain:true,iconCls:'icon-ok'"
-                OnClick="lbtnCheck_Click">审核</asp:LinkButton>
+                OnClick="lbtnCheck_Click">终审</asp:LinkButton>
             <asp:LinkButton ID="lbtnReCheck" runat="server" CssClass="easyui-linkbutton" data-options="plain:true,iconCls:'icon-back'"
-                OnClick="lbtnReCheck_Click">反审核</asp:LinkButton>
+                OnClick="lbtnReCheck_Click">退稿</asp:LinkButton>
+            <asp:LinkButton ID="lbtnFirstCheck" runat="server" CssClass="easyui-linkbutton" data-options="plain:true,iconCls:'icon-firstcheck'"
+                OnClick="lbtnFirstCheck_Click">初审</asp:LinkButton>
+            <asp:LinkButton ID="lbtnReject" runat="server" CssClass="easyui-linkbutton" data-options="plain:true,iconCls:'icon-back'"
+                OnClick="lbtnReject_Click">反初审</asp:LinkButton>
             <asp:LinkButton ID="lbtnDelete" runat="server" CssClass="easyui-linkbutton" data-options="plain:true,iconCls:'icon-cancel'"
                 OnClientClick="return confirm('您确定删除所选的吗？')" OnClick="lbtnDelete_Click">删除</asp:LinkButton>
         </div>
@@ -79,7 +83,12 @@
                             <%# FormatTime((DateTime) Eval("last_update_time"))%>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="审核状态">
+                    <asp:TemplateField HeaderText="初审状态">
+                        <ItemTemplate>
+                            <%#Eval("first_check") %>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="终审状态">
                         <ItemTemplate>
                             <%#Eval("is_check") %>
                         </ItemTemplate>

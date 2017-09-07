@@ -52,7 +52,9 @@
 .icon-tip{
 	background:url('icons/tip.png') no-repeat center center;
 }
-
+.icon-firstcheck{
+    background:url('icons/firstcheck.png') no-repeat center center;
+}
 .icon-mini-add{
 	background:url('icons/mini_add.png') no-repeat center center;
 }

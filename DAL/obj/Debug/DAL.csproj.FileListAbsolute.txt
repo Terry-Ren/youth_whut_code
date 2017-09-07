@@ -96,3 +96,17 @@ E:\理工青年\理工青年\youth_whut_code\DAL\bin\Debug\AUTO.Model.pdb
 E:\理工青年\理工青年\youth_whut_code\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 E:\理工青年\理工青年\youth_whut_code\DAL\obj\Debug\AUTO.DAL.dll
 E:\理工青年\理工青年\youth_whut_code\DAL\obj\Debug\AUTO.DAL.pdb
+E:\校团委宣传部\理工青年\youth_whut_code\DAL\bin\Debug\AUTO.DAL.dll
+E:\校团委宣传部\理工青年\youth_whut_code\DAL\bin\Debug\AUTO.DAL.pdb
+E:\校团委宣传部\理工青年\youth_whut_code\DAL\bin\Debug\AUTO.Common.dll
+E:\校团委宣传部\理工青年\youth_whut_code\DAL\bin\Debug\AUTO.Model.dll
+E:\校团委宣传部\理工青年\youth_whut_code\DAL\bin\Debug\AUTO.Utility.dll
+E:\校团委宣传部\理工青年\youth_whut_code\DAL\bin\Debug\NPOI.dll
+E:\校团委宣传部\理工青年\youth_whut_code\DAL\bin\Debug\Maticsoft.Common.dll
+E:\校团委宣传部\理工青年\youth_whut_code\DAL\bin\Debug\Ionic.Zip.dll
+E:\校团委宣传部\理工青年\youth_whut_code\DAL\bin\Debug\AUTO.Common.pdb
+E:\校团委宣传部\理工青年\youth_whut_code\DAL\bin\Debug\AUTO.Utility.pdb
+E:\校团委宣传部\理工青年\youth_whut_code\DAL\bin\Debug\AUTO.Model.pdb
+E:\校团委宣传部\理工青年\youth_whut_code\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\校团委宣传部\理工青年\youth_whut_code\DAL\obj\Debug\AUTO.DAL.dll
+E:\校团委宣传部\理工青年\youth_whut_code\DAL\obj\Debug\AUTO.DAL.pdb

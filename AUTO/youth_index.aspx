@@ -37,7 +37,7 @@
                                         <asp:Repeater ID="rptHomeImg" runat="server">
                                             <ItemTemplate>
                                                 <li class="themeitem"><a href='youth_news.aspx?news_id=<%#Eval("news_id") %>' target="_blank">
-                                                    <img src='youth_admin/<%#Eval("photo_url") %>' width="460" height="367" alt=""></a><div
+                                                    <img src='youth_admin/<%#Eval("photo_url") %>' width="580" height="367" alt=""></a><div
                                                         class="halfO">
                                                     </div>
                                                     <p class="fs18 yahei tc txtOh white">
