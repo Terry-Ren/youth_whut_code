@@ -190,6 +190,45 @@ namespace AUTO.BLL
         }
 
         /// <summary>
+        /// 初审新闻
+        /// </summary>
+        /// <param name="news_id"></param>
+        /// <param name="operate_name"></param>
+        /// <returns></returns>
+        public bool FirstCheckNews(int news_id, string operate_name)
+        {
+            int rows = news_dal.FirstCheckNews(news_id, operate_name);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 退稿新闻
+        /// </summary>
+        /// <param name="news_id"></param>
+        /// <param name="operate_name"></param>
+        /// <returns></returns>
+        public bool RejectNews(int news_id, string operate_name)
+        {
+            int rows = news_dal.RejectNews(news_id, operate_name);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        /// <summary>
         /// 删除新闻
         /// </summary>
         /// <param name="news_id"></param>
