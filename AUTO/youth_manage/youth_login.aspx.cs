@@ -38,13 +38,15 @@ namespace AUTO.youth_manage
             //int Role_id = Convert.ToInt32(ddlRole.SelectedValue);
             int Role_id = Convert.ToInt32(ddlRole.SelectedItem.Value);
             string check_code = txbCheck.Text.ToString().ToLower();
-            //if (!check_code.Equals(Session[Constant.CheckCode].ToString()))
-            //{
-            //    lblTip.Text = "验证码错误";
-            //    lblTip.Visible = true;
-            //    txbCheck.Text = "";
-            //    return;
-            //}
+            
+              if (!check_code.Equals(Session[Constant.CheckCode].ToString()))
+            {
+                lblTip.Text = "验证码错误";
+                lblTip.Visible = true;
+                txbCheck.Text = "";
+                return;
+            }
+            
             AUTO.BLL.YouthUsersBLL user_bll = new BLL.YouthUsersBLL();
             bool i = user_bll.check_user(user_name, pwd, Role_id);
             if (i)
@@ -56,6 +58,7 @@ namespace AUTO.youth_manage
 
                 YouthUsers model = new YouthUsers();
                 model = user_bll.GetUserById(user_id);
+
 
                 Session[Constant.adminID] = user_id;
                 //Session[Constant.adminID] = "7";

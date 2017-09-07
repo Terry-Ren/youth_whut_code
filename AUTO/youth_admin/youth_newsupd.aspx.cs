@@ -27,6 +27,7 @@ namespace AUTO.youth_admin
                 bindSorce();
                 bindNewsCol();
                 bindData(news_id);
+                bindRevise();
             }
         }
 
@@ -36,6 +37,7 @@ namespace AUTO.youth_admin
             txtTitle.Text = news_model.News_title;
             txt_clickTimes.Text = news_model.Click_times.ToString();
             txtContent.Text = news_model.News_content;
+            txt_revise.Text = news_model.News_revise;
             txt_publisher.Text = news_model.Publisher;
             txt_publish_time.Text = news_model.Publish_time.ToString("yyyy-MM-dd");
             txt_phone.Text = news_model.Publisher_phone;
@@ -45,6 +47,14 @@ namespace AUTO.youth_admin
 
         }
 
+        //是否能够修改[修改意见]
+        protected void bindRevise()
+        {
+            int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
+            AUTO.BLL.YouthNewsColBLL bll = new BLL.YouthNewsColBLL();
+            if (role_id == 3 || role_id == 4)
+                txt_revise.Enabled = false;
+        }
         protected void lbtnSave_Click(object sender, EventArgs e)
         {
             int news_id = Convert.ToInt32(ViewState["news_id"].ToString());
@@ -53,6 +63,7 @@ namespace AUTO.youth_admin
             news_model.News_id = news_id;
             news_model.News_title = txtTitle.Text.Trim().ToString();
             news_model.News_content = txtContent.Text;
+            news_model.News_revise = txt_revise.Text;
             news_model.News_father_id = Convert.ToInt32(ddl_news_col.SelectedValue);
             news_model.Publisher = txt_publisher.Text.ToString();
             news_model.Publisher_phone = txt_phone.Text;
@@ -62,7 +73,8 @@ namespace AUTO.youth_admin
             news_model.News_source = Convert.ToInt32(ddl_source.SelectedValue.ToString());
             news_model.Last_update = Session[Constant.adminName].ToString();
             news_model.Last_update_time = DateTime.Now;
-            news_model.Is_check = "N";
+            news_model.First_check = originalModel.First_check;
+            news_model.Is_check = originalModel.Is_check;
             news_model.Checker = "";
             news_model.Check_time = originalModel.Check_time;
             news_model.Rechecker = originalModel.Rechecker;
