@@ -41,7 +41,7 @@ namespace AUTO.youth_admin
             int role_id = Convert.ToInt32(ViewState["role_id"].ToString());
             switch (role_id)
             {
-                case 3://内部编辑——包括理工才俊、共青之声和校园在线
+                case (3|4)://内部编辑、实习编辑——包括理工才俊、共青之声和校园在线
                     pageTotal = news_bll.GetRecordCount(" 1=1 and news_father_id>2  " + GetWhereSql());
                     DataSet ds_editor = news_bll.GetListByPage(" 1=1 and news_father_id>2   " + GetWhereSql(), pageSize, pageIndex, " convert(varchar,publish_time,120) desc ");
                     for (int i = 0; i < ds_editor.Tables[0].Rows.Count; i++)
@@ -70,7 +70,7 @@ namespace AUTO.youth_admin
                     gvwData.DataKeyNames = new String[] { "news_id" };
                     gvwData.DataBind();
                     break;
-                case 4://学院账号——包括本学院的基层团建、学生社团、学院动态
+                case 5://学院账号——包括本学院的基层团建、学生社团、学院动态
                     pageTotal = news_bll.GetRecordCount(" 1=1 and news_father_id>2 and news_father_id<6 and news_source=" + Convert.ToInt32(Session[Constant.AcademicID]) + " " + GetWhereSql());
                     DataSet ds_academic = news_bll.GetListByPage(" 1=1 and news_father_id>2 and news_father_id<6 and news_source=" + Convert.ToInt32(Session[Constant.AcademicID]) + " " + GetWhereSql(), pageSize, pageIndex, "publish_time desc ");
                     for (int i = 0; i < ds_academic.Tables[0].Rows.Count; i++)
@@ -149,7 +149,11 @@ namespace AUTO.youth_admin
                     //ds = bll.GetNewsColList(" news_column_id >2 and news_column_id<8 ");
                     ds = bll.GetNewsColList("  news_column_id >2  ");
                     break;
-                case 4://学院账号
+                case 4://实习编辑
+                    //ds = bll.GetNewsColList(" news_column_id >2 and news_column_id<8 ");
+                    ds = bll.GetNewsColList("  news_column_id >2  ");
+                    break;
+                case 5://学院账号
                     ds = bll.GetNewsColList(" news_column_id >2 and news_column_id<6  ");
                     //ds = bll.GetNewsColList(" news_column_id >2 and news_column_id<6 ");
                     break;
@@ -215,7 +219,7 @@ namespace AUTO.youth_admin
         protected void lbtnCheck_Click(object sender, EventArgs e)
         {
             int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
-            if (role_id == 4 || role_id == 3)
+            if (role_id == 4 || role_id == 3|| role_id == 5)
             {
                 String message = "对不起，您没有相应权限";
                 MyUtil.ShowMessage(this.Page, message);
@@ -247,7 +251,7 @@ namespace AUTO.youth_admin
         protected void lbtnReCheck_Click(object sender, EventArgs e)
         {
             int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
-            if (role_id == 4 || role_id == 3)
+            if (role_id == 4 || role_id == 3|| role_id == 5)
             {
                 String message = "对不起，您没有相应权限";
                 MyUtil.ShowMessage(this.Page, message);
@@ -278,7 +282,7 @@ namespace AUTO.youth_admin
         protected void lbtnFirstCheck_Click(object sender, EventArgs e)
         {
             int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
-            if (role_id == 4)
+            if (role_id == 4||  role_id == 5)
             {
                 String message = "对不起，您没有相应权限";
                 MyUtil.ShowMessage(this.Page, message);
@@ -305,7 +309,7 @@ namespace AUTO.youth_admin
         protected void lbtnReject_Click(object sender, EventArgs e)
         {
             int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
-            if (role_id ==3||role_id==4)
+            if (role_id ==3||role_id==4|| role_id == 5)
             {
                 String message = "对不起，您没有相应权限";
                 MyUtil.ShowMessage(this.Page, message);
@@ -332,7 +336,7 @@ namespace AUTO.youth_admin
         protected void lbtnDelete_Click(object sender, EventArgs e)
         {
             int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
-            if (role_id==3)
+            if (role_id==4|| role_id == 3)
             {
                 String message = "对不起，您没有相应权限";
                 MyUtil.ShowMessage(this.Page, message);
@@ -390,7 +394,7 @@ namespace AUTO.youth_admin
         protected void lbtnShow_Click(object sender, EventArgs e)
         {
             int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
-            if (role_id == 4)
+            if (role_id == 4|| role_id == 5|| role_id == 3)
             {
                 String message = "对不起，您没有相应权限";
                 MyUtil.ShowMessage(this.Page, message);

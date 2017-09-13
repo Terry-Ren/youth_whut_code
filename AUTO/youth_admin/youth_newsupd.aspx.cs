@@ -52,7 +52,7 @@ namespace AUTO.youth_admin
         {
             int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
             AUTO.BLL.YouthNewsColBLL bll = new BLL.YouthNewsColBLL();
-            if (role_id == 3 || role_id == 4)
+            if (role_id == 3 || role_id == 4 || role_id == 5)
                 txt_revise.Enabled = false;
         }
         protected void lbtnSave_Click(object sender, EventArgs e)
@@ -118,11 +118,11 @@ namespace AUTO.youth_admin
                 case 2://超级管理员
                     ds = bll.GetNewsColList("");
                     break;
-                case 3://高级管理员
+                case (3|4)://高级管理员和实习编辑
                     //ds = bll.GetNewsColList(" news_column_id >5 ");
                     ds = bll.GetNewsColList("");
                     break;
-                case 4://学院账号
+                case 5://学院账号
                     ds = bll.GetNewsColList(" news_column_id >2 and news_column_id<6 ");
                     break;
             }

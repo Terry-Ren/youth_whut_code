@@ -74,7 +74,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="404.htm" />
+    <Content Include="youth_manage\404.htm" />
     <Content Include="admin\css\all.css" />
     <Content Include="admin\images\admin.jpg" />
     <Content Include="admin\images\admin_bg.jpg" />
