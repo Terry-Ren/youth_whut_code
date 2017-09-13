@@ -79,10 +79,13 @@ namespace AUTO.youth_manage
                     case 3://高级管理员、内部编辑
                         Response.Redirect("../youth_admin/Menu_Editor.aspx");
                         break;
-                    case 4://学院账号
+                    case  4://高级管理员、内部编辑
+                        Response.Redirect("../youth_admin/Menu_Editor.aspx");
+                        break;
+                    case 5://学院账号
                         Response.Redirect("../youth_admin/Menu_Academic.aspx");
                         break;
-                    case 5://团委书记
+                    case 6://团委书记
                         Response.Redirect("../youth_admin/Menu_Shuji.aspx");
                         break;
                 }

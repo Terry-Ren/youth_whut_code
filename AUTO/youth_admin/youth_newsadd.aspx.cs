@@ -45,12 +45,18 @@ namespace AUTO.youth_admin
                     break;
                 case 3://高级管理员——内部编辑
                     //ds = bll.GetNewsColList(" news_column_id >5 and news_column_id<8 ");
-                    ds = bll.GetNewsColList("  news_column_id >5  ");
+                    ds = bll.GetNewsColList("");
                     break;
-                case 4://学院账号
+                case 4: //实习编辑
+                   //ds = bll.GetNewsColList(" news_column_id >5 and news_column_id<8 ");
+                    ds = bll.GetNewsColList("");
+                    break;
+                case 5://学院账号
                     //ds = bll.GetNewsColList(" news_column_id >2 and news_column_id<6 ");
                     ds = bll.GetNewsColList(" news_column_id >2 and news_column_id<6  ");
                     break;
+                    break;
+
             }
 
             DataTable dtSource = ds.Tables[0];
