@@ -118,7 +118,11 @@ namespace AUTO.youth_admin
                 case 2://超级管理员
                     ds = bll.GetNewsColList("");
                     break;
-                case (3|4)://高级管理员和实习编辑
+                case 3://高级管理员
+                    //ds = bll.GetNewsColList(" news_column_id >5 ");
+                    ds = bll.GetNewsColList("");
+                    break;
+                case 4://实习编辑
                     //ds = bll.GetNewsColList(" news_column_id >5 ");
                     ds = bll.GetNewsColList("");
                     break;
