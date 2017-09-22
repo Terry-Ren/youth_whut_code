@@ -30,20 +30,23 @@ namespace AUTO.youth_admin
                 int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
                 ViewState["role_id"] = role_id;
 
+                //记录页面排序字段
+                ViewState["SortField"] = "publish_time";
+
                 bindNewsCol();
                 bindData();
-
             }
         }
 
         protected void bindData()
         {
             int role_id = Convert.ToInt32(ViewState["role_id"].ToString());
+            string SortField = ViewState["SortField"].ToString();
             switch (role_id)
             {
-                case (3|4)://内部编辑、实习编辑——包括理工才俊、共青之声和校园在线
+                case (3 | 4)://内部编辑、实习编辑——包括理工才俊、共青之声和校园在线
                     pageTotal = news_bll.GetRecordCount(" 1=1 and news_father_id>2  " + GetWhereSql());
-                    DataSet ds_editor = news_bll.GetListByPage(" 1=1 and news_father_id>2   " + GetWhereSql(), pageSize, pageIndex, " convert(varchar,publish_time,120) desc ");
+                    DataSet ds_editor = news_bll.GetListByPage(" 1=1 and news_father_id>2   " + GetWhereSql(), pageSize, pageIndex, " convert(varchar," + SortField + ",120) desc ");
                     for (int i = 0; i < ds_editor.Tables[0].Rows.Count; i++)
                     {
                         string first_check = ds_editor.Tables[0].Rows[i]["first_check"].ToString();
@@ -72,7 +75,7 @@ namespace AUTO.youth_admin
                     break;
                 case 5://学院账号——包括本学院的基层团建、学生社团、学院动态
                     pageTotal = news_bll.GetRecordCount(" 1=1 and news_father_id>2 and news_father_id<6 and news_source=" + Convert.ToInt32(Session[Constant.AcademicID]) + " " + GetWhereSql());
-                    DataSet ds_academic = news_bll.GetListByPage(" 1=1 and news_father_id>2 and news_father_id<6 and news_source=" + Convert.ToInt32(Session[Constant.AcademicID]) + " " + GetWhereSql(), pageSize, pageIndex, "publish_time desc ");
+                    DataSet ds_academic = news_bll.GetListByPage(" 1=1 and news_father_id>2 and news_father_id<6 and news_source=" + Convert.ToInt32(Session[Constant.AcademicID]) + " " + GetWhereSql(), pageSize, pageIndex, SortField + " desc ");
                     for (int i = 0; i < ds_academic.Tables[0].Rows.Count; i++)
                     {
                         string first_check = ds_academic.Tables[0].Rows[i]["first_check"].ToString();
@@ -102,7 +105,7 @@ namespace AUTO.youth_admin
                 default:
                     //站长和超级管理员默认读取所有新闻
                     pageTotal = news_bll.GetRecordCount(" 1=1 " + GetWhereSql());
-                    DataSet ds = news_bll.GetListByPage(" 1=1 " + GetWhereSql(), pageSize, pageIndex, "publish_time desc ");
+                    DataSet ds = news_bll.GetListByPage(" 1=1 " + GetWhereSql(), pageSize, pageIndex, SortField + " desc ");
                     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                     {
                         string first_check = ds.Tables[0].Rows[i]["first_check"].ToString();
@@ -208,7 +211,6 @@ namespace AUTO.youth_admin
             return str;
         }
 
-
         //搜索新闻
         protected void lbtnSearch_Click(object sender, EventArgs e)
         {
@@ -219,7 +221,7 @@ namespace AUTO.youth_admin
         protected void lbtnCheck_Click(object sender, EventArgs e)
         {
             int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
-            if (role_id == 4 || role_id == 3|| role_id == 5)
+            if (role_id == 4 || role_id == 3 || role_id == 5)
             {
                 String message = "对不起，您没有相应权限";
                 MyUtil.ShowMessage(this.Page, message);
@@ -251,7 +253,7 @@ namespace AUTO.youth_admin
         protected void lbtnReCheck_Click(object sender, EventArgs e)
         {
             int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
-            if (role_id == 4 || role_id == 3|| role_id == 5)
+            if (role_id == 4 || role_id == 3 || role_id == 5)
             {
                 String message = "对不起，您没有相应权限";
                 MyUtil.ShowMessage(this.Page, message);
@@ -282,7 +284,7 @@ namespace AUTO.youth_admin
         protected void lbtnFirstCheck_Click(object sender, EventArgs e)
         {
             int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
-            if (role_id == 4||  role_id == 5)
+            if (role_id == 4 || role_id == 5)
             {
                 String message = "对不起，您没有相应权限";
                 MyUtil.ShowMessage(this.Page, message);
@@ -309,7 +311,7 @@ namespace AUTO.youth_admin
         protected void lbtnReject_Click(object sender, EventArgs e)
         {
             int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
-            if (role_id ==3||role_id==4|| role_id == 5)
+            if (role_id == 3 || role_id == 4 || role_id == 5)
             {
                 String message = "对不起，您没有相应权限";
                 MyUtil.ShowMessage(this.Page, message);
@@ -336,7 +338,7 @@ namespace AUTO.youth_admin
         protected void lbtnDelete_Click(object sender, EventArgs e)
         {
             int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
-            if (role_id==4|| role_id == 3)
+            if (role_id == 4 || role_id == 3)
             {
                 String message = "对不起，您没有相应权限";
                 MyUtil.ShowMessage(this.Page, message);
@@ -394,7 +396,7 @@ namespace AUTO.youth_admin
         protected void lbtnShow_Click(object sender, EventArgs e)
         {
             int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
-            if (role_id == 4|| role_id == 5|| role_id == 3)
+            if (role_id == 4 || role_id == 5 || role_id == 3)
             {
                 String message = "对不起，您没有相应权限";
                 MyUtil.ShowMessage(this.Page, message);
@@ -462,6 +464,24 @@ namespace AUTO.youth_admin
                 strToCut = strToCut.Substring(0, 19).ToString() + "...";
             }
             return strToCut;
+        }
+
+        //点击排序事件
+        protected void gvwData_Sorting(object sender, GridViewSortEventArgs e)
+        {
+            if (e.SortExpression == "发布时间")
+            {
+                //修改排序字段
+                ViewState["SortField"] = "publish_time";
+            }
+            else
+            {
+                //修改排序字段
+                ViewState["SortField"] = "last_update_time";
+            }
+
+            //重新绑定数据
+            bindData();
         }
     }
 }

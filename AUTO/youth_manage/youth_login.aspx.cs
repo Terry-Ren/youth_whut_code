@@ -28,18 +28,17 @@ namespace AUTO.youth_manage
             this.ddlRole.DataValueField = "role_id";
             this.ddlRole.DataSource = ds;
             this.ddlRole.DataBind();
-            this.ddlRole.Items.Insert(0, new ListItem("", ""));
+            this.ddlRole.Items.Insert(0, new ListItem("请选择用户类型", "-1"));
         }
 
         protected void login_Click(object sender, EventArgs e)
         {
             string user_name = txbAdminName.Text.Trim().ToString();
             string pwd = txbPassword.Text.Trim().ToString();
-            //int Role_id = Convert.ToInt32(ddlRole.SelectedValue);
             int Role_id = Convert.ToInt32(ddlRole.SelectedItem.Value);
             string check_code = txbCheck.Text.ToString().ToLower();
-            
-              if (!check_code.Equals(Session[Constant.CheckCode].ToString()))
+
+            if (!check_code.Equals(Session[Constant.CheckCode].ToString()))
             {
                 lblTip.Text = "验证码错误";
                 lblTip.Visible = true;
@@ -79,7 +78,7 @@ namespace AUTO.youth_manage
                     case 3://高级管理员、内部编辑
                         Response.Redirect("../youth_admin/Menu_Editor.aspx");
                         break;
-                    case  4://高级管理员、内部编辑
+                    case 4://高级管理员、内部编辑
                         Response.Redirect("../youth_admin/Menu_Editor.aspx");
                         break;
                     case 5://学院账号
