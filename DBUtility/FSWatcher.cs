@@ -1,12 +1,7 @@
-﻿using Maticsoft.Common;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Web;
-using System.Web.UI;
 
 namespace AUTO.Utility
 {
@@ -15,7 +10,8 @@ namespace AUTO.Utility
         //static int count = 0;
         static FileSystemWatcher watcher = new FileSystemWatcher();
         static int eventCount = 0;
-        string baseURL = HttpRuntime.AppDomainAppPath.ToString() + "js\\ckfinder\\userfiles\\images\\";
+        //string baseURL = HttpRuntime.AppDomainAppPath.ToString() + "js\\ckfinder\\userfiles\\images\\";
+        string baseURL = HttpRuntime.AppDomainAppPath.ToString() + "upload\\image\\";
 
         //static List<string> files = new List<string>();
 
@@ -63,15 +59,20 @@ namespace AUTO.Utility
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        
+
         private static void watch_created(object sender, FileSystemEventArgs e)
         {
+            //水印图片地址
             string Waterpath = HttpRuntime.AppDomainAppPath.ToString() + "js\\ckfinder\\userfiles\\imagesLogo\\youth_whut_Logo.png";
-            string SavePath= HttpRuntime.AppDomainAppPath.ToString() + "js\\ckfinder\\userfiles\\images\\";
-            string file_name=e.FullPath.Remove(e.FullPath.LastIndexOf('.'));
-            string newfileName = file_name+"HasAddWater"+ ".jpg";
-            
-            if (e.FullPath.IndexOf("HasAddWater") <0)
+
+            //根据日期判断保存的文件路径
+            string filePath = "upload\\image\\" + DateTime.Now.ToString("yyyyMMdd") + "\\";
+            //保存图片地址
+            string SavePath = HttpRuntime.AppDomainAppPath.ToString() + filePath;
+            string file_name = e.FullPath.Remove(e.FullPath.LastIndexOf('.'));
+            string newfileName = file_name + "HasAddWater" + ".jpg";
+
+            if (e.FullPath.IndexOf("HasAddWater") < 0)
             {
                 ImageManager im = new ImageManager();
                 Thread.Sleep(1000);

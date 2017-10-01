@@ -17,6 +17,10 @@ namespace AUTO.youth_online_post
             {
                 bindSource();
             }
+
+            //启动监听
+            FSWatcher fsw = new FSWatcher();
+
         }
 
         //绑定新闻来源——院系
