@@ -125,7 +125,7 @@
             <a href='#'
              target="_blank">
             <%--<img src="youth_admin/<%=special_img_url %>" /></a>--%>
-        <img src="youth_admin/upload/SpecialImg/ydh.jpg" /></a>
+        <img src="youth_admin/upload/SpecialImg/20171013204906284383.png" /></a>
     </div>
     <div class="block_two">
         <!--==right==-->
