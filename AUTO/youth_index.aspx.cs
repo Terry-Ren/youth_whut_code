@@ -128,7 +128,7 @@ namespace AUTO
             if (model != null)
             {
                 fast_id = Convert.ToInt32(model.News_id);
-                fast_title = model.News_title.Length > 30 ? model.News_title.Substring(0, 29) + "..." : model.News_title.ToString();
+                fast_title = model.News_title.Length > 27 ? model.News_title.Substring(0, 26) + "..." : model.News_title.ToString();
                 fast_time = FormatTime(model.Publish_time);
                 fast_content = model.News_content.Length > 40 ? model.News_content.Substring(0, 39) : model.News_content;
             }
@@ -398,9 +398,9 @@ namespace AUTO
         //新闻标题过长，进行截取
         protected string CutStringNewsSD(string strToCut)
         {
-            if (strToCut.Length > 30)
+            if (strToCut.Length > 27)
             {
-                strToCut = strToCut.Substring(0, 29).ToString() + "...";
+                strToCut = strToCut.Substring(0, 26).ToString() + "...";
             }
             return strToCut;
         }
