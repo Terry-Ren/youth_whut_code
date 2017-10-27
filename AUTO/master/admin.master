@@ -7,7 +7,7 @@
     <link href="~/admin/js/themes/gray/easyui.css" rel="stylesheet" type="text/css" runat="server" />
     <link href="~/admin/js/themes/icon.css" rel="stylesheet" type="text/css" runat="server" />
     <link href="~/admin/css/all.css" rel="stylesheet" type="text/css" runat="server" />
-
+    
     <script src='<%=ResolveClientUrl("~/admin/js/jquery-1.8.0.min.js") %>' type="text/javascript"></script>
 
     <script src='<%=ResolveClientUrl("~/admin/js/jquery.easyui.min.js") %>' type="text/javascript"></script>
@@ -15,7 +15,14 @@
     <script src='<%=ResolveClientUrl("~/admin/js/easyui-lang-zh_CN.js") %>' type="text/javascript"></script>
 
     <script src='<%=ResolveClientUrl("~/admin/js/site.js") %>' type="text/javascript"></script>
-
+    <style id="grid_a_color">
+        a {
+            color: rgb(104,104,104)
+        }
+            a:hover {
+                color:rgb(0,0,0)
+            }
+    </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>

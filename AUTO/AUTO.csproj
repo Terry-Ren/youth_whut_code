@@ -2065,6 +2065,7 @@
     <None Include="images\logos.psd" />
     <None Include="images\play.psd" />
     <None Include="images\预览图.psd" />
+    <None Include="Properties\PublishProfiles\配置文件1.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

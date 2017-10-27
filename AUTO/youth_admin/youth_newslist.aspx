@@ -40,9 +40,9 @@
             <asp:LinkButton ID="lbtnDelete" runat="server" CssClass="easyui-linkbutton" data-options="plain:true,iconCls:'icon-cancel'"
                 OnClientClick="return confirm('您确定删除所选的吗？')" OnClick="lbtnDelete_Click">删除</asp:LinkButton>
         </div>
-        <div id="box_middle">
+        <div id="box_middle" class="grid_a_color">
             <asp:GridView ID="gvwData" runat="server" AutoGenerateColumns="false" CssClass="table"
-                HorizontalAlign="Center" DataKeyNames="news_id">
+                HorizontalAlign="Center" DataKeyNames="news_id" AllowSorting="true" OnSorting="gvwData_Sorting">
                 <Columns>
                     <asp:TemplateField HeaderText="">
                         <ItemTemplate>
@@ -68,7 +68,7 @@
                             <%# Eval("publisher")%>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="发布时间">
+                    <asp:TemplateField HeaderText="发布时间" SortExpression="发布时间">
                         <ItemTemplate>
                             <%# FormatTime((DateTime) Eval("publish_time"))%>
                         </ItemTemplate>
@@ -78,7 +78,7 @@
                             <%# Eval("last_updater")%>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="编辑时间">
+                    <asp:TemplateField HeaderText="编辑时间" SortExpression="编辑时间">
                         <ItemTemplate>
                             <%# FormatTime((DateTime) Eval("last_update_time"))%>
                         </ItemTemplate>
