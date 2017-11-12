@@ -10,9 +10,9 @@
         }
     </script>
      <!--引入Ueditor配置文件  -->
-    <script type="text/javascript" src="../ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="../../ueditor/ueditor.config.js"></script>
     <!--引入Ueditor编辑器-->
-    <script type="text/javascript" src="../ueditor/ueditor.all.min.js"></script>
+    <script type="text/javascript" src="../../ueditor/ueditor.all.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table id="addtable">
@@ -38,16 +38,11 @@
                 文件详情：
             </td>
             <td>
-               <%-- <asp:TextBox ID="txt_content" name="txtContent" class="ckeditor" runat="server" TextMode="MultiLine"></asp:TextBox><br />
-           --%>
-                <script type="text/plain" id="txtcontent" style="width:650px;height:300px;">
-                   
-                </script>
+                <script type="text/plain" id="txtcontent" style="width:650px;height:300px;"></script>
                 <asp:TextBox ID="txt_content" runat="server" style="display:none;"></asp:TextBox>
                 <script type="text/javascript">
                     var ue = UE.getEditor('txtcontent');
                  </script>
-
             </td>
         </tr>
         <tr>
