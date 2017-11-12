@@ -5,7 +5,7 @@
     <%--<script src="../../js/ckeditor/ckeditor.js" type="text/javascript"></script>--%>
     <script type="text/javascript">
         function checkinput() {
-            document.getElementById("<%=txt_content.ClientID%>").value = ue.getContent;
+            document.getElementById("<%=txt_content.ClientID%>").value = ue.getContent();
             return true;
         }
     </script>
