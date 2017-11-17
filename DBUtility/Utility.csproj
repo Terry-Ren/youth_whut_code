@@ -31,11 +31,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AUTO.Utility">
+      <HintPath>..\AUTO\bin\AUTO.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <HintPath>..\AUTO\bin\Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\AUTO\bin\Ionic.Zip.dll</HintPath>
+    </Reference>
     <Reference Include="Maticsoft.Common">
-      <HintPath>bin\Maticsoft.Common.dll</HintPath>
+      <HintPath>..\AUTO\bin\Maticsoft.Common.dll</HintPath>
     </Reference>
     <Reference Include="NPOI">
-      <HintPath>bin\NPOI.dll</HintPath>
+      <HintPath>..\AUTO\Bin\NPOI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -71,6 +81,9 @@
     <Compile Include="SystemUtil.cs" />
     <Compile Include="VerifyCode.cs" />
     <Compile Include="waterMark.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
