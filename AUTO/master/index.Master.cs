@@ -17,15 +17,27 @@ namespace AUTO.master
 
         }
 
-        public string bindMenu()
+        public string bindMenuCommittee()
         {
             string str = "";
             DataSet ds = bll.GetList();
-            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-            {
-                //str += "<li><a href='../youth_information.aspx?menu_id='>" + ds.Tables[0].Rows[i]["menu_name"] + "</a></li>";
-                str += "<li><a href='../youth_information.aspx?menu_id=" + Convert.ToInt32(ds.Tables[0].Rows[i]["menu_id"].ToString()) + "'>" + ds.Tables[0].Rows[i]["menu_name"] + "</a></li>";
-            }
+            str += "<li><a href='../youth_information.aspx?menu_id=" + Convert.ToInt32(ds.Tables[0].Rows[2]["menu_id"].ToString()) + "'>" + ds.Tables[0].Rows[2]["menu_name"] + "</a></li>";
+            return str;
+        }
+
+        public string bindMenuScience()
+        {
+            string str = "";
+            DataSet ds = bll.GetList();
+            str += "<li><a href='../youth_information.aspx?menu_id=" + Convert.ToInt32(ds.Tables[0].Rows[0]["menu_id"].ToString()) + "'>" + ds.Tables[0].Rows[0]["menu_name"] + "</a></li>";
+            return str;
+        }
+
+        public string bindMenuOrganization()
+        {
+            string str = "";
+            DataSet ds = bll.GetList();
+            str += "<li><a href='../youth_information.aspx?menu_id=" + Convert.ToInt32(ds.Tables[0].Rows[1]["menu_id"].ToString()) + "'>" + ds.Tables[0].Rows[1]["menu_name"] + "</a></li>";
             return str;
         }
     }

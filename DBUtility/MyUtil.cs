@@ -133,7 +133,7 @@ namespace AUTO.Utility
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static String MD5(String str)
+        public static String MD5(String str) 
         {
             byte[] array = Maticsoft.Common.DEncrypt.DEncrypt.MakeMD5(Encoding.UTF8.GetBytes(str));
             return BitConverter.ToString(array).Replace("-", "");

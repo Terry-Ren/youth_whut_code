@@ -16,6 +16,8 @@ namespace AUTO
         YouthNewsColBLL news_col_bll = new YouthNewsColBLL();
 
         YouthFilesBLL file_bll = new YouthFilesBLL();
+        YouthFilesColBLL file_col_bll = new YouthFilesColBLL();
+
         YouthSpecialBLL special_bll = new YouthSpecialBLL();
         YouthVideoBLL video_bll = new YouthVideoBLL();
         YouthTalkLgBLL talk_bll = new YouthTalkLgBLL();
@@ -79,6 +81,16 @@ namespace AUTO
         public string zaixian_time = "";
         public string zaixian_content = "";
 
+
+        //设置规章制度
+        public String file_guizhang_name = String.Empty;
+        public int file_guizhang_id = 0;
+
+        public int guizhang_id = 0;
+        public string guizhang_title = "";
+        public string guizhang_time = "";
+        public string guizhang_content = "";
+
         //设置通知公告
         public String news_gonggao_name = String.Empty;
         public int news_gonggao_id = 0;
@@ -93,7 +105,7 @@ namespace AUTO
             {
                 bindNewsCol();
                 bindNewsFast();
-                bindGongGao();
+                //bindGongGao();
                 bindHomeImg();
                 bindJicengTuanjian();
                 bindStudentShetuan();
@@ -101,6 +113,7 @@ namespace AUTO
                 bindTecCaiJun();
                 bindGongQing();
                 bindZaiXian();
+                bindGuiZhang();
                 bindFile();
                 bindJingPin();
                 bindVideo();
@@ -140,14 +153,15 @@ namespace AUTO
 
 
         }
+      
 
         //绑定通知公告
-        protected void bindGongGao()
-        {
-            DataSet ds = news_bll.GetList(6, " news_father_id =" + news_gonggao_id + " and is_check='Y'", " publish_time desc ");
-            rptGongGao.DataSource = ds;
-            rptGongGao.DataBind();
-        }
+        //protected void bindGongGao()
+        //{
+        //    DataSet ds = news_bll.GetList(6, " news_father_id =" + news_gonggao_id + " and is_check='Y'", " publish_time desc ");
+        //    rptGongGao.DataSource = ds;
+        //    rptGongGao.DataBind();
+        //}
 
         //绑定基层团建
         protected void bindJicengTuanjian()
@@ -265,12 +279,18 @@ namespace AUTO
         {
             DataSet ds_news_col = news_col_bll.GetNewsCol();
 
+            DataSet ds_file_col = file_col_bll.GetFilesCol();
+
+            file_guizhang_name = ds_file_col.Tables[0].Rows[1]["file_column_name"].ToString();
+            file_guizhang_id= int.Parse(ds_file_col.Tables[0].Rows[1]["file_column_id"].ToString());
+
             //此处的news_fast和news_fast_id后续补充完善，将所有新闻类别进行绑定
             news_fast_name = ds_news_col.Tables[0].Rows[0]["news_column_name"].ToString();
             news_fast_id = int.Parse(ds_news_col.Tables[0].Rows[0]["news_column_id"].ToString());
 
-            news_gonggao_name = ds_news_col.Tables[0].Rows[1]["news_column_name"].ToString();
-            news_gonggao_id = int.Parse(ds_news_col.Tables[0].Rows[1]["news_column_id"].ToString());
+            
+            //news_gonggao_name = ds_news_col.Tables[0].Rows[1]["news_column_name"].ToString();
+            //news_gonggao_id = int.Parse(ds_news_col.Tables[0].Rows[1]["news_column_id"].ToString());
 
             news_jiceng_name = ds_news_col.Tables[0].Rows[2]["news_column_name"].ToString();
             news_jiceng_id = int.Parse(ds_news_col.Tables[0].Rows[2]["news_column_id"].ToString());
@@ -297,6 +317,14 @@ namespace AUTO
             DataSet ds_home_img = news_bll.GetHomeImg(5, " is_check='Y' and is_photoNews='Y' ");
             rptHomeImg.DataSource = ds_home_img;
             rptHomeImg.DataBind();
+        }
+
+        //绑定规章制度
+        protected void bindGuiZhang()
+        {
+            DataSet ds = file_bll.GetFiles(6, " is_check='Y' and file_father_id=2 ");
+            rptGuiZhang.DataSource = ds;
+            rptGuiZhang.DataBind();
         }
 
         //绑定办公文件

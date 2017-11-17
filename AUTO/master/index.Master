@@ -38,13 +38,14 @@
     <div class="nav_box">
         <ul id="muen">
             <li><a href="../youth_index.aspx"  target="_blank">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
-            <li><a href="../youth_index_files/youth_files_list.aspx?file_father_id=2"  target="_blank">规章制度</a></li>
+            <li><a href="../youth_news_list.aspx?news_col_id=2"  target="_blank">通知公告</a></li>
             <li><a href="http://whlgdx.hubei.qnzs.youth.cn/"  target="_blank">青年之声</a></li>
+            <%=bindMenuScience()%>
             <li><a href="http://volunteers.whut.edu.cn/"  target="_blank">志愿服务</a></li>
+            <%=bindMenuOrganization()%>
+            <%=bindMenuCommittee()%>
             <li><a href="../youth_index_downloads/youth_downloads_list.aspx?download_father_id=1"  target="_blank">常用下载</a></li>
-            <%=bindMenu() %>
-           
-            
+
             
         </ul>
     </div>
@@ -132,19 +133,19 @@
                 return false;
             });
             /*办公文件、通知公告*/
-            $(".tongzhi").hide();
+            $(".guizhang").hide();
             $(".bangong_btn").click(function () {
-                $(".tongzhi").hide();
+                $(".guizhang").hide();
                 $(".bangong").show();
                 $(".bangong_btn").addClass("active");
-                $(".tongzhi_btn").removeClass("active");
+                $(".guizhang_btn").removeClass("active");
                 return false;
             });
-            $(".tongzhi_btn").click(function () {
-                $(".tongzhi").show();
+            $(".guizhang_btn").click(function () {
+                $(".guizhang").show();
                 $(".bangong").hide();
                 $(".bangong_btn").removeClass("active");
-                $(".tongzhi_btn").addClass("active");
+                $(".guizhang_btn").addClass("active");
                 return false;
             });
 
