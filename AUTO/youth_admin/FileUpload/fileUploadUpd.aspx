@@ -6,14 +6,14 @@
 
     <script type="text/javascript">
         function checkinput() {
-            document.getElementById("<%=txt_content.ClientID%>").value = ue.getContent;
+            document.getElementById("<%=txt_content.ClientID%>").value = ue.getContent();
             return true;
         }
     </script>
      <!--引入Ueditor配置文件  -->
-    <script type="text/javascript" src="../ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="../../ueditor/ueditor.config.js"></script>
     <!--引入Ueditor编辑器-->
-    <script type="text/javascript" src="../ueditor/ueditor.all.min.js"></script>
+    <script type="text/javascript" src="../../ueditor/ueditor.all.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table id="addtable">
@@ -47,6 +47,9 @@
                 <asp:TextBox ID="txt_content" runat="server" style="display:none;"></asp:TextBox>
                 <script type="text/javascript">
                     var ue = UE.getEditor('txtcontent');
+                    ue.ready(function () {
+                                ue.setContent(document.getElementById("<%=txt_content.ClientID%>").value);
+                            })
                  </script>
             </td>
         </tr>
