@@ -82,6 +82,7 @@ namespace AUTO.youth_admin
             news_model.Publish_time = DateTime.Now;
             news_model.Click_times = 0;
             news_model.News_source = Convert.ToInt32(ddl_source.SelectedValue.ToString());
+            //
             news_model.Last_update = ViewState["operate_name"].ToString();
             news_model.Last_update_time = DateTime.Now;
             news_model.First_check = "N";
