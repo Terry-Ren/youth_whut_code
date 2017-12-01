@@ -16,6 +16,7 @@ namespace AUTO.youth_manage
         {
             if (!IsPostBack)
             {
+                Session.Timeout = 120;
                 bindRole();
             }
         }
@@ -58,14 +59,15 @@ namespace AUTO.youth_manage
                 YouthUsers model = new YouthUsers();
                 model = user_bll.GetUserById(user_id);
 
-
-                Session[Constant.adminID] = user_id;
                 //Session[Constant.adminID] = "7";
+                Session[Constant.adminID] = user_id;
                 Session[Constant.roleID] = Role_id;
-                Session[Constant.adminName] = user_name;
                 //Session[Constant.adminName] = "测试开发专用";
-                Session[Constant.AcademicID] = model.User_academic_id;
+
+                Session[Constant.adminName] = user_name;
                 //Session[Constant.AcademicID] = "测试专用";
+
+                Session[Constant.AcademicID] = model.User_academic_id;
                 //根据Role_id跳转到不同页面
                 switch (Role_id)
                 {
@@ -78,7 +80,7 @@ namespace AUTO.youth_manage
                     case 3://高级管理员、内部编辑
                         Response.Redirect("../youth_admin/Menu_Editor.aspx");
                         break;
-                    case 4://高级管理员、内部编辑
+                    case 4://实习编辑
                         Response.Redirect("../youth_admin/Menu_Editor.aspx");
                         break;
                     case 5://学院账号
