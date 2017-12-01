@@ -59,8 +59,8 @@ namespace AUTO.youth_admin
         {
             int news_id = Convert.ToInt32(ViewState["news_id"].ToString());
             YouthNews originalModel = news_bll.GetYouthNews(news_id);
-
             news_model.News_id = news_id;
+            //获取保存
             news_model.News_title = txtTitle.Text.Trim().ToString();
             news_model.News_content = txtContent.Text;
             news_model.News_revise = txt_revise.Text;
@@ -71,6 +71,7 @@ namespace AUTO.youth_admin
             news_model.Publish_time = Convert.ToDateTime(txt_publish_time.Text.ToString());
             news_model.Click_times = Convert.ToInt32(txt_clickTimes.Text.ToString());
             news_model.News_source = Convert.ToInt32(ddl_source.SelectedValue.ToString());
+            //Session.Timeout设置时长
             news_model.Last_update = Session[Constant.adminName].ToString();
             news_model.Last_update_time = DateTime.Now;
             news_model.First_check = originalModel.First_check;
@@ -93,16 +94,6 @@ namespace AUTO.youth_admin
                 //编辑失败
                 MyUtil.ShowMessage(this.Page, "修改失败");
             }
-        }
-
-        protected void bindSorce()
-        {
-            DataSet ds = aca_bll.GetAcademic();
-            ddl_source.DataValueField = "academic_id";
-            ddl_source.DataTextField = "academic_name";
-            ddl_source.DataSource = ds;
-            ddl_source.DataBind();
-            this.ddl_source.Items.Insert(0, new ListItem("", "0"));
         }
 
         protected void bindNewsCol()
@@ -135,6 +126,16 @@ namespace AUTO.youth_admin
             ddl_news_col.DataSource = ds;
             ddl_news_col.DataBind();
             ddl_news_col.Items.Insert(0, new ListItem("", "0"));
+        }
+
+        protected void bindSorce()
+        {
+            DataSet ds = aca_bll.GetAcademic();
+            ddl_source.DataValueField = "academic_id";
+            ddl_source.DataTextField = "academic_name";
+            ddl_source.DataSource = ds;
+            ddl_source.DataBind();
+            this.ddl_source.Items.Insert(0, new ListItem("", "0"));
         }
     }
 }
