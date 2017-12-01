@@ -141,7 +141,7 @@ namespace AUTO
             if (model != null)
             {
                 fast_id = Convert.ToInt32(model.News_id);
-                fast_title = model.News_title.Length > 27 ? model.News_title.Substring(0, 26) + "..." : model.News_title.ToString();
+                fast_title = model.News_title.Length > 24 ? model.News_title.Substring(0, 23) + "..." : model.News_title.ToString();
                 fast_time = FormatTime(model.Publish_time);
                 fast_content = model.News_content.Length > 40 ? model.News_content.Substring(0, 39) : model.News_content;
             }
