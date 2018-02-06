@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using AUTO.BLL;
 using AUTO.Model;
-using AUTO.BLL;
-using System.Data;
 using AUTO.Utility;
+using System;
+using System.Data;
+using System.Web.UI.WebControls;
 
 namespace AUTO.youth_admin.TuShuoLG
 {
