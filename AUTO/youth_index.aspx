@@ -299,9 +299,8 @@
                 <ul class="jingpin_block ul_video">
                     <asp:Repeater ID="rptVideo" runat="server">
                         <ItemTemplate>
-                            <li class="li_video"><a href='<%#Eval("video_link") %>' target="_blank">
-                                <img src='youth_admin/<%#Eval("video_pic") %>'  
-                                    target="_blank" class="jp_title">
+                            <embed src="武汉理工大学是什么.mp4" width="280" height="140" />
+                                <a class="jp_title" href='<%#Eval("video_link") %>' target="_blank">
                                     <%#Eval("video_title")%></a><a href='<%#Eval("video_link") %>' target="_blank">
                                         <img src="images/play.jpg" class="play" /></a> </li>
                         </ItemTemplate>
