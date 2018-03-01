@@ -99,6 +99,12 @@
 
             $(".tougao_ul li:even").addClass("even");
             /*视频1*/
+            $("#video_id").bind("play", function () {
+                $("#poster_img").hide();
+            });
+            $("#poster_img").bind("click", function () {
+                $("#video_id").trigger('play');
+            });
             $(".video .play").hide();
             $(".video").hover(function () {
                 if ($(this).children("a").children(".play").is(":visible")) {
