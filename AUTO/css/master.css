@@ -630,7 +630,7 @@ font-weight:bold; color:#3B9DDE; height:34px; line-height:30px;}
 .block_video_inner{height:135px; }
 .block_title2{margin-left: 5px;margin-right: 5px; margin-bottom:8px;}
 .block_title3{margin-bottom:10px;}
-#poster_img{  width:280px;height:140px;position:absolute;left:0px;top:0px;background:transparent no-repeat;background-size:cover;}
+#poster_img{  width:280px;height:140px;position:absolute;left:0px;top:0px;z-index:1}
 .video{width:280px;text-align:center;padding:0; position:relative;}
 .video2{width:192px;text-align: center;float: left;padding: 0 5px;position: relative;}
 div.video2 img {

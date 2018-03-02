@@ -300,13 +300,14 @@
                     <asp:Repeater ID="rptVideo" runat="server">
                         <ItemTemplate>
                             <li class="li_video">
-                                <img id="poster_img" src='youth_admin/<%#Eval("video_pic") %>'target="_blank">
+                                <img id="poster_img" src='youth_admin/<%#Eval("video_pic") %>' >
                                 <video id="video_id" width="280" height="140" controls loop >
                                     <source src="武汉理工大学是什么.mp4" type="video/mp4">
                                     您的浏览器不支持 video 标签。
                                 </video>
-                                <a class="jp_title" href='<%#Eval("video_link") %>' target="_blank">
-                                    <%#Eval("video_title")%></a></a></li>
+                                <a id="v_title" class="jp_title" href='<%#Eval("video_link") %>' target="_blank">
+                                    <%#Eval("video_title")%></a><a target="_blank">
+                                        <img src="images/play.jpg" class="play" /></a></li>
                         </ItemTemplate>
                     </asp:Repeater>
                 </ul>
