@@ -417,7 +417,7 @@ namespace AUTO
         //新闻标题过长，进行截取
         protected string CutString(string strToCut)
         {
-            if (strToCut.Length > 14)
+            if (strToCut.Length >= 14)
             {
                 strToCut = strToCut.Substring(0, 13).ToString() + "...";
             }
