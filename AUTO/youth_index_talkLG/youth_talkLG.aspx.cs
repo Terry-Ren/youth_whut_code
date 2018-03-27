@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using AUTO.BLL;
+﻿using AUTO.BLL;
 using AUTO.Model;
-using System.Data;
-using System.Xml;
-using System.Text.RegularExpressions;
+using System;
 using System.Collections;
+using System.Data;
+using System.Text.RegularExpressions;
+using System.Xml;
 
 namespace AUTO.youth_index_talkLG
 {
@@ -54,7 +49,7 @@ namespace AUTO.youth_index_talkLG
                 XmlNodeList xnl = GetNoteList(str, "//img");
                 //for (int i = 0; i < xnl.Count; i++)
                 //{
-                talk_alt = xnl[0].Attributes["alt"].Value;
+                talk_alt = (xnl[0].Attributes["alt"] == null) ? "" : xnl[0].Attributes["alt"].Value;
                 talk_src = "<img src='" + xnl[0].Attributes["src"].Value.Trim() + "' height='367' width='668'/>";
                 // }
                 al_src.Add(talk_src);

@@ -114,7 +114,7 @@ namespace AUTO
                 bindGongQing();
                 bindZaiXian();
                 bindGuiZhang();
-                bindFile();
+                //bindFile();
                 bindJingPin();
                 bindVideo();
                 bindTalkLG();
@@ -141,7 +141,7 @@ namespace AUTO
             if (model != null)
             {
                 fast_id = Convert.ToInt32(model.News_id);
-                fast_title = model.News_title.Length > 27 ? model.News_title.Substring(0, 26) + "..." : model.News_title.ToString();
+                fast_title = model.News_title.Length > 24 ? model.News_title.Substring(0, 23) + "..." : model.News_title.ToString();
                 fast_time = FormatTime(model.Publish_time);
                 fast_content = model.News_content.Length > 40 ? model.News_content.Substring(0, 39) : model.News_content;
             }
@@ -153,7 +153,7 @@ namespace AUTO
 
 
         }
-      
+
 
         //绑定通知公告
         //protected void bindGongGao()
@@ -288,7 +288,7 @@ namespace AUTO
             news_fast_name = ds_news_col.Tables[0].Rows[0]["news_column_name"].ToString();
             news_fast_id = int.Parse(ds_news_col.Tables[0].Rows[0]["news_column_id"].ToString());
 
-            
+
             //news_gonggao_name = ds_news_col.Tables[0].Rows[1]["news_column_name"].ToString();
             //news_gonggao_id = int.Parse(ds_news_col.Tables[0].Rows[1]["news_column_id"].ToString());
 
@@ -326,7 +326,7 @@ namespace AUTO
             rptGuiZhang.DataSource = ds;
             rptGuiZhang.DataBind();
         }
-
+        /*
         //绑定办公文件
         protected void bindFile()
         {
@@ -334,7 +334,7 @@ namespace AUTO
             rptFiles.DataSource = ds;
             rptFiles.DataBind();
         }
-
+        */
         //绑定精品专题
         protected void bindJingPin()
         {
@@ -417,9 +417,9 @@ namespace AUTO
         //新闻标题过长，进行截取
         protected string CutString(string strToCut)
         {
-            if (strToCut.Length > 16)
+            if (strToCut.Length >= 14)
             {
-                strToCut = strToCut.Substring(0, 15).ToString() + "...";
+                strToCut = strToCut.Substring(0, 13).ToString() + "...";
             }
             return strToCut;
         }

@@ -5,14 +5,14 @@
     <%--<script src="../../js/ckeditor/ckeditor.js" type="text/javascript"></script>--%>
     <script type="text/javascript">
         function checkinput() {
-            document.getElementById("<%=txtContent.ClientID%>").value = ue.getContent;
+            document.getElementById("<%=txtContent.ClientID%>").value = ue.getContent();
             return true;
         }
     </script>
      <!--引入Ueditor配置文件  -->
-    <script type="text/javascript" src="../ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="../../ueditor/ueditor.config.js"></script>
     <!--引入Ueditor编辑器-->
-    <script type="text/javascript" src="../ueditor/ueditor.all.min.js"></script>
+    <script type="text/javascript" src="../../ueditor/ueditor.all.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table id="addtable">
@@ -45,10 +45,10 @@
                 <asp:TextBox ID="txtContent" runat="server" style="display:none;"></asp:TextBox>
                 <script type="text/javascript">
                     var ue = UE.getEditor('txtcontent');
+                            ue.ready(function () {
+                                ue.setContent(document.getElementById("<%=txtContent.ClientID%>").value);
+                            })
                  </script>
-
-
-
             </td>
         </tr>
         <tr>

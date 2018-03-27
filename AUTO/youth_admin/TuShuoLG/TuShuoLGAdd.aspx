@@ -7,14 +7,14 @@
     
      <script type="text/javascript">
         function checkinput() {
-            document.getElementById("<%=txtContent.ClientID%>").value = ue.getContent;
+            document.getElementById("<%=txtContent.ClientID%>").value = ue.getContent();
             return true;
         }
     </script>
      <!--引入Ueditor配置文件  -->
-    <script type="text/javascript" src="../ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="../../ueditor/ueditor.config.js"></script>
     <!--引入Ueditor编辑器-->
-    <script type="text/javascript" src="../ueditor/ueditor.all.min.js"></script>
+    <script type="text/javascript" src="../../ueditor/ueditor.all.min.js"></script>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -50,9 +50,6 @@
                     var ue = UE.getEditor('txtcontent');
                  </script>
 
-
-            
-            
             </td>
         </tr>
         <tr>
