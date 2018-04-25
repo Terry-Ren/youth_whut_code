@@ -253,7 +253,7 @@ namespace AUTO.youth_admin
         protected void lbtnReCheck_Click(object sender, EventArgs e)
         {
             int role_id = Convert.ToInt32(Session[Constant.roleID].ToString());
-            if (role_id == 4 || role_id == 3 || role_id == 5)
+            if (role_id == 4  || role_id == 5)
             {
                 String message = "对不起，您没有相应权限";
                 MyUtil.ShowMessage(this.Page, message);
